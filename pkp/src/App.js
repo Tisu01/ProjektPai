@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './views/Home';
+import 'antd/dist/antd.min.css'
 
 function App() {
   return (
