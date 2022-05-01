@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './views/Home';
+import Login from './views/Login';
 import 'antd/dist/antd.min.css'
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
-            <Route path="/users" element={<Users />}/>
+            <Route path="/login" element={<Login />}/>
         </Routes>
        </BrowserRouter>
   );
