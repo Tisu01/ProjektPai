@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
+//import ReactDOM from "react-dom";
+import { Layout, Menu,Input,Row, Col,DatePicker,Button,Tooltip} from 'antd';
+import { RightOutlined,SearchOutlined  } from '@ant-design/icons';
+import {Link} from "react-router-dom";
+
 
 import "./styles.css";
-
+const { Header, Content } = Layout;
 export function Login() {
 
      const [errorMessages, setErrorMessages] = useState({});
@@ -74,12 +78,39 @@ export function Login() {
          </div>
        );
   return (
-    <div className="login">
-      <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-      </div>
-    </div>
+    <Layout>
+
+        <Header className="header">
+          <div className="logo" />
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+          <Link to="/">
+              <Menu.Item key="1">Główna Strona</Menu.Item>
+          </Link>
+
+                      <Menu.Item key="1">Logowanie</Menu.Item>
+
+          </Menu>
+        </Header>
+
+         <Layout>
+            <Content
+              className="site-layout-background"
+              style={{
+                padding: 24,
+                margin: 0,
+                minHeight: 280,
+              }}
+            >
+     <div className="login">
+       <div className="login-form">
+         <div className="title">Sign In</div>
+         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+       </div>
+     </div>
+            </Content>
+          </Layout>
+        </Layout>
+
   );
 }
 
