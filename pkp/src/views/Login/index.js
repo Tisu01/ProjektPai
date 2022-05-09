@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //import ReactDOM from "react-dom";
-import { Layout, Menu,Input,Row, Col,DatePicker,Button,Tooltip} from 'antd';
-import { RightOutlined,SearchOutlined  } from '@ant-design/icons';
+import { Layout, Menu} from 'antd';
+//import { RightOutlined,SearchOutlined  } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 
 
@@ -86,9 +86,7 @@ export function Login() {
           <Link to="/">
               <Menu.Item key="1">Główna Strona</Menu.Item>
           </Link>
-
                       <Menu.Item key="1">Logowanie</Menu.Item>
-
           </Menu>
         </Header>
 
@@ -101,12 +99,30 @@ export function Login() {
                 minHeight: 280,
               }}
             >
-     <div className="login">
-       <div className="login-form">
-         <div className="title">Sign In</div>
-         {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
-       </div>
-     </div>
+            <div id="wrapper">
+        <div className="text-center m-5-auto">
+            <h2>Sign in to us</h2>
+            <form action="/home">
+                <p>
+                    <label>Username or email address</label><br/>
+                    <input type="text" name="first_name" required />
+                </p>
+                <p>
+                    <label>Password</label>
+                    <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
+                    <br/>
+                    <input type="password" name="password" required />
+                </p>
+                <p>
+                    <button id="sub_btn" type="submit">Login</button>
+                </p>
+            </form>
+            <footer>
+                <p>First time? <Link to="/register">Create an account</Link>.</p>
+                <p><Link to="/">Back to Homepage</Link>.</p>
+            </footer>
+        </div>
+        </div>
             </Content>
           </Layout>
         </Layout>

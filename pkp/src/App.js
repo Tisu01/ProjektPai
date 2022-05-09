@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 import Home from './views/Home';
 import Login from './views/Login';
+import Register from './views/Register';
+import ForgetPassword from './views/ForgetPassword';
 import 'antd/dist/antd.min.css'
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
             <Route path="/" element={<Home />}/>
             <Route path="/about" element={<About />}/>
             <Route path="/login" element={<Login />}/>
+            <Route path="/register" element={<Register />}/>
+            <Route path="/forget-password" element={<ForgetPassword />}/>
         </Routes>
        </BrowserRouter>
   );
