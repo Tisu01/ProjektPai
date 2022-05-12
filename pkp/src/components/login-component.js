@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
 import { Layout, Menu} from 'antd';
-import {Link, withRouter} from "react-router-dom";
+import {Link, withRouter, useNavigate } from "react-router-dom";
 
 
 import AuthService from "../services/auth-service";
 import "./styles.css";
+
 const { Header, Content } = Layout;
 const required = value => {
   if (!value) {
@@ -19,7 +17,8 @@ const required = value => {
   }
 };
 
-export default class Login extends Component {
+class Login extends Component {
+
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
@@ -61,7 +60,7 @@ export default class Login extends Component {
     if (this.state.clickButton === true) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/home");
+          this.props.navigate('/home');
           window.location.reload();
         },
         error => {
@@ -86,6 +85,7 @@ export default class Login extends Component {
   }
 
   render() {
+
     return (
       <Layout>
                <Layout>
@@ -146,11 +146,6 @@ export default class Login extends Component {
                               </div>
                              )}
 
-
-
-
-
-
                   </form>
                   <footer>
                       <p>First time? <Link to="/register">Create an account</Link>.</p>
@@ -164,3 +159,6 @@ export default class Login extends Component {
     );
   }
 }
+
+
+export default Login;

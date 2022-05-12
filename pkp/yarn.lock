@@ -1051,7 +1051,7 @@
     "core-js-pure" "^3.20.2"
     "regenerator-runtime" "^0.13.4"
 
-"@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.8", "@babel/runtime@^7.16.3", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.8", "@babel/runtime@^7.14.0", "@babel/runtime@^7.16.3", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   "integrity" "sha512-lSiBBvodq29uShpWGNbgFdKYNiFDo5/HIYsaCEY9ff4sb10x9jizo2+pRrSyF4jKZCXqgzuqBOQKbUm90gQwJg=="
   "resolved" "https://registry.npmjs.org/@babel/runtime/-/runtime-7.17.9.tgz"
   "version" "7.17.9"
@@ -1448,13 +1448,6 @@
   "resolved" "https://registry.npmjs.org/@restart/context/-/context-2.1.4.tgz"
   "version" "2.1.4"
 
-"@restart/hooks@^0.3.26":
-  "integrity" "sha512-s984xV/EapUIfkjlf8wz9weP2O9TNKR96C68FfMEy2bE69+H4cNv3RD4Mf97lW7Htt7PjZrYTjSC8f3SB9VCXw=="
-  "resolved" "https://registry.npmjs.org/@restart/hooks/-/hooks-0.3.27.tgz"
-  "version" "0.3.27"
-  dependencies:
-    "dequal" "^2.0.2"
-
 "@restart/hooks@^0.4.7":
   "integrity" "sha512-ZbjlEHcG+FQtpDPHd7i4FzNNvJf2enAwZfJbpM8CW7BhmOAbsHpZe3tsHwfQUrBuyrxWqPYp2x5UMnilWcY22A=="
   "resolved" "https://registry.npmjs.org/@restart/hooks/-/hooks-0.4.7.tgz"
@@ -1739,13 +1732,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/classnames@^2.2.10":
-  "integrity" "sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A=="
-  "resolved" "https://registry.npmjs.org/@types/classnames/-/classnames-2.3.1.tgz"
-  "version" "2.3.1"
-  dependencies:
-    "classnames" "*"
-
 "@types/connect-history-api-fallback@^1.3.5":
   "integrity" "sha512-h8QJa8xSb1WD4fpKBDcATDNGXghFj6/3GRWG6dhmRcu0RX1Ubasur2Uvx5aeEwlf0MwblEC2bMzzMQntxnw/Cw=="
   "resolved" "https://registry.npmjs.org/@types/connect-history-api-fallback/-/connect-history-api-fallback-1.3.5.tgz"
@@ -1929,7 +1915,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.9.11", "@types/react@>=16.9.35":
+"@types/react@*", "@types/react@>=16.14.8", "@types/react@>=16.9.11":
   "integrity" "sha512-UPxNGInDCIKlfqBrm8LDXYWNfLHwIdisWcsH5GpMyGjhEDLFgTtlRBaoWuCua9HcyuE0rMkmAeZ3FXV1pYLIYQ=="
   "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.5.tgz"
   "version" "18.0.5"
@@ -2832,10 +2818,10 @@
   "resolved" "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz"
   "version" "1.0.0"
 
-"bootstrap@^3.4.1":
-  "integrity" "sha512-yN5oZVmRCwe5aKwzRj6736nSmKDX7pLYwsXiCj/EYmo16hODaBiT4En5btW/jhBF/seV+XMx3aYwukYC3A49DA=="
-  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-3.4.1.tgz"
-  "version" "3.4.1"
+"bootstrap@^4.4.1":
+  "integrity" "sha512-tbx5cHubwE6e2ZG7nqM3g/FZ5PQEDMWmMGNrCUBVRPHXTJaH7CBDdsLeu3eCh3B1tzAxTnAbtmrzvWEvT2NNEA=="
+  "resolved" "https://registry.npmjs.org/bootstrap/-/bootstrap-4.4.1.tgz"
+  "version" "4.4.1"
 
 "brace-expansion@^1.1.7":
   "integrity" "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="
@@ -3042,7 +3028,7 @@
   "resolved" "https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz"
   "version" "1.2.2"
 
-"classnames@*", "classnames@^2.0.0", "classnames@^2.2.1", "classnames@^2.2.3", "classnames@^2.2.5", "classnames@^2.2.6", "classnames@^2.3.1", "classnames@2.x":
+"classnames@^2.0.0", "classnames@^2.2.1", "classnames@^2.2.3", "classnames@^2.2.5", "classnames@^2.2.6", "classnames@^2.3.1", "classnames@2.x":
   "integrity" "sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA=="
   "resolved" "https://registry.npmjs.org/classnames/-/classnames-2.3.1.tgz"
   "version" "2.3.1"
@@ -3725,7 +3711,7 @@
   dependencies:
     "utila" "~0.4"
 
-"dom-helpers@^5.0.1", "dom-helpers@^5.1.2", "dom-helpers@^5.2.0":
+"dom-helpers@^5.0.1", "dom-helpers@^5.2.0", "dom-helpers@^5.2.1":
   "integrity" "sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA=="
   "resolved" "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.1.tgz"
   "version" "5.2.1"
@@ -5672,6 +5658,11 @@
     "import-local" "^3.0.2"
     "jest-cli" "^27.5.1"
 
+"jquery@1.9.1 - 3":
+  "integrity" "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
+  "version" "3.6.0"
+
 "js-tokens@^3.0.0 || ^4.0.0", "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
   "resolved" "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -6555,6 +6546,11 @@
   "version" "3.1.0"
   dependencies:
     "find-up" "^3.0.0"
+
+"popper.js@^1.16.0":
+  "integrity" "sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ=="
+  "resolved" "https://registry.npmjs.org/popper.js/-/popper.js-1.16.1.tgz"
+  "version" "1.16.1"
 
 "portfinder@^1.0.28":
   "integrity" "sha512-Se+2isanIcEqf2XMHjyUKskczxbPH7dQnlMjXX6+dybayyHvAf/TCgyMRlzf/B6QDhAEFOGes0pzRo3by4AbMA=="
@@ -7611,26 +7607,25 @@
     "react-bootstrap" ">=0.23.0"
     "validator" "^3.41.3"
 
-"react-bootstrap@^1.5.2", "react-bootstrap@>=0.23.0":
-  "integrity" "sha512-mGKPY5+lLd7Vtkx2VFivoRkPT4xAHazuFfIhJLTEgHlDfIUSePn7qrmpZe5gXH9zvHV0RsBaQ9cLfXjxnZrOpA=="
-  "resolved" "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-1.5.2.tgz"
-  "version" "1.5.2"
+"react-bootstrap@^1.6.5", "react-bootstrap@>=0.23.0":
+  "integrity" "sha512-l2rm5LtDI7JMtdGrzaxNl4OJwH0fMIJDlvwQ2TMvs9h9d0E4ELLpG3J45Pox6xUkpuFfXdWUiGazZXyIuv/OKA=="
+  "resolved" "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-1.6.5.tgz"
+  "version" "1.6.5"
   dependencies:
-    "@babel/runtime" "^7.13.8"
+    "@babel/runtime" "^7.14.0"
     "@restart/context" "^2.1.4"
-    "@restart/hooks" "^0.3.26"
-    "@types/classnames" "^2.2.10"
+    "@restart/hooks" "^0.4.7"
     "@types/invariant" "^2.2.33"
     "@types/prop-types" "^15.7.3"
-    "@types/react" ">=16.9.35"
+    "@types/react" ">=16.14.8"
     "@types/react-transition-group" "^4.4.1"
     "@types/warning" "^3.0.0"
-    "classnames" "^2.2.6"
-    "dom-helpers" "^5.1.2"
+    "classnames" "^2.3.1"
+    "dom-helpers" "^5.2.1"
     "invariant" "^2.2.4"
     "prop-types" "^15.7.2"
     "prop-types-extra" "^1.1.0"
-    "react-overlays" "^5.0.0"
+    "react-overlays" "^5.1.2"
     "react-transition-group" "^4.4.1"
     "uncontrollable" "^7.2.1"
     "warning" "^4.0.3"
@@ -7703,7 +7698,7 @@
   "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   "version" "3.0.4"
 
-"react-overlays@^5.0.0":
+"react-overlays@^5.1.2":
   "integrity" "sha512-kLCq0ngBtuVnp0eMx8gISD9FaCkifUZoOdHReTJGfnDikvvOjZpi/OduTgXEf6rGYm24WJbHFJFDaKD+ylQ03g=="
   "resolved" "https://registry.npmjs.org/react-overlays/-/react-overlays-5.1.2.tgz"
   "version" "5.1.2"

@@ -1,6 +1,22 @@
-import React, { Component } from "react";
-
+import React, { Component, useState } from "react";
+import './Home.css';
+import { RightOutlined,SearchOutlined  } from '@ant-design/icons';
+import {Link} from "react-router-dom";
+import {
+  Layout,
+  Form,
+  Input,
+  Button,
+  Radio,
+  Select,
+  Cascader,
+  DatePicker,
+  InputNumber,
+  TreeSelect,
+  Switch,
+} from 'antd';
 import UserService from "../services/user-service";
+const { Header, Content } = Layout;
 
 export default class Home extends Component {
   constructor(props) {
@@ -30,12 +46,28 @@ export default class Home extends Component {
   }
 
   render() {
-    return (
-      <div className="container">
-        <header className="jumbotron">
-          <h3>{this.state.content}</h3>
-        </header>
-      </div>
+  return (
+        <Form labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
+      initialValues={{size: '20'}}
+      onValuesChange='50'
+      size='50'
+    >
+
+      <Form.Item label="FROM">
+        <Input />
+      </Form.Item>
+      <Form.Item label="TO:">
+        <Input />
+       </Form.Item>
+
+      <Form.Item label="DATE">
+        <DatePicker />
+      </Form.Item>
+        <br />
+      <Form.Item>
+        <Button>SEARCH</Button>
+      </Form.Item>
+    </Form>
     );
   }
 }
