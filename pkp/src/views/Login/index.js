@@ -79,7 +79,6 @@ export function Login() {
        );
   return (
     <Layout>
-
         <Header className="header">
           <div className="logo" />
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
@@ -89,7 +88,6 @@ export function Login() {
                       <Menu.Item key="1">Logowanie</Menu.Item>
           </Menu>
         </Header>
-
          <Layout>
             <Content
               className="site-layout-background"

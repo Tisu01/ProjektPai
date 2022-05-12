@@ -20,8 +20,6 @@ import EventBus from "./common/EventBus";
 
 class App extends Component {
 
-
-
   constructor(props) {
     super(props);
     this.logOut = this.logOut.bind(this);
@@ -139,15 +137,18 @@ class App extends Component {
 
         <div className="container mt-3">
             <Routes>
-            <Route exact path={["/", "/home"]} element={<Home />} />
+            <Route exact path={"/"} element={<Home />} />
+            <Route exact path={"/home"} element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register />} />
-            <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/profile" element={<Profile />}  />
             <Route path="/user" element={<BoardUser />} />
             <Route path="/mod" element={<BoardModerator />} />
             <Route path="/admin" element={<BoardAdmin />} />
             </Routes>
         </div>
+
+
 
 
         </Router>

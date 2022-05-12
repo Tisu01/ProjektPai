@@ -3,9 +3,11 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-
+import './Register.css';
+import {Layout} from 'antd';
+import {Link} from "react-router-dom";
 import AuthService from "../services/auth-service";
-
+const {  Content } = Layout;
 const required = value => {
   if (!value) {
     return (
@@ -55,6 +57,7 @@ export default class Register extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
+      clickButton: false,
       username: "",
       email: "",
       password: "",
@@ -86,23 +89,29 @@ export default class Register extends Component {
 
     this.setState({
       message: "",
-      successful: false
+      successful: false,
+      clickButton: true
     });
 
-    this.form.validateAll();
+    //this.form.validateAll();
 
-    if (this.checkBtn.context._errors.length === 0) {
+    if (this.state.clickButton === true) {
       AuthService.register(
         this.state.username,
         this.state.email,
         this.state.password
       ).then(
+      () => {
+                //this.props.history.push("/home");
+                window.location.reload();
+              },
         response => {
           this.setState({
             message: response.data.message,
             successful: true
           });
         },
+
         error => {
           const resMessage =
             (error.response &&
@@ -122,6 +131,7 @@ export default class Register extends Component {
 
   render() {
     return (
+    /*
       <div className="col-md-12">
         <div className="card card-container">
           <img
@@ -203,6 +213,88 @@ export default class Register extends Component {
           </Form>
         </div>
       </div>
+//{!this.state.successful && ( )}
+      */
+
+      <Layout>
+                <Content
+                  className="site-layout-background"
+                  style={{
+                    padding: 24,
+                    margin: 0,
+                    minHeight: 280,
+                  }}
+                >
+                <div id="wrapper">
+             <div className="text-center m-5-auto">
+                  <h2>Join us</h2>
+                  <h5>Create your personal account</h5>
+                  <form
+                  onSubmit={this.handleRegister}
+                              ref={c => {
+                                this.form = c;
+                              }}>
+
+                      <p>
+                          <label>Username</label><br/>
+                          <input type="text"
+                                                     className="form-control"
+                                                     name="username"
+                                                     value={this.state.username}
+                                                     onChange={this.onChangeUsername}
+                                                     validations={[required, vusername]} />
+                      </p>
+                      <p>
+                          <label>Email address</label><br/>
+                          <input type="text"
+                                                     className="form-control"
+                                                     name="email"
+                                                     value={this.state.email}
+                                                     onChange={this.onChangeEmail}
+                                                     validations={[required, email]} />
+                      </p>
+                      <p>
+                          <label>Password</label><br/>
+                          <input  type="password"
+                                                     className="form-control"
+                                                     name="password"
+                                                     value={this.state.password}
+                                                     onChange={this.onChangePassword}
+                                                     validations={[required, vpassword]} />
+                      </p>
+                      <p>
+                          <input type="checkbox" name="checkbox" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>.
+                      </p>
+                      <p>
+                          <button id="sub_btn" type="submit">Register</button>
+                      </p>
+
+                      {this.state.message && (
+                                    <div className="form-group">
+                                      <div
+                                        className={
+                                          this.state.successful
+                                            ? "alert alert-success"
+                                            : "alert alert-danger"
+                                        }
+                                        role="alert"
+                                      >
+                                        {this.state.message}
+                                      </div>
+                                    </div>
+                                  )}
+
+
+
+                  </form>
+                  <footer>
+                      <p><Link to="/">Back to Homepage</Link>.</p>
+                  </footer>
+              </div>
+              </div>
+                </Content>
+              </Layout>
+
     );
   }
 }

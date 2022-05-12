@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import { Layout, Menu} from 'antd';
+import {Link, withRouter} from "react-router-dom";
+
 
 import AuthService from "../services/auth-service";
-
+import "./styles.css";
+const { Header, Content } = Layout;
 const required = value => {
   if (!value) {
     return (
@@ -23,6 +27,7 @@ export default class Login extends Component {
     this.onChangePassword = this.onChangePassword.bind(this);
 
     this.state = {
+      clickButton: false,
       username: "",
       password: "",
       loading: false,
@@ -47,15 +52,16 @@ export default class Login extends Component {
 
     this.setState({
       message: "",
-      loading: true
+      loading: true,
+      clickButton: true
     });
 
-    this.form.validateAll();
+    //this.form.validateAll();
 
-    if (this.checkBtn.context._errors.length === 0) {
+    if (this.state.clickButton === true) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/profile");
+          this.props.history.push("/home");
           window.location.reload();
         },
         error => {
@@ -81,72 +87,80 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
+      <Layout>
+               <Layout>
+                  <Content
+                    className="site-layout-background"
+                    style={{
+                      padding: 24,
+                      margin: 0,
+                      minHeight: 280,
+                    }}
+                  >
+                  <div id="wrapper">
+              <div className="text-center m-5-auto">
+                  <h2>Sign in to us</h2>
+                  <form onSubmit={this.handleLogin}
+                                    ref={c => {
+                                      this.form = c;
+                                    }}
+                                    >
+                      <p>
+                          <label>Username or email address</label><br/>
+                          <input
+                           type="text"
+                                           className="form-control"
+                                           name="username"
+                                           value={this.state.username}
+                                           onChange={this.onChangeUsername}
+                                           validations={[required]}
+                           />
+                      </p>
+                      <p>
+                          <label>Password</label>
+                          <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
+                          <br/>
+                          <input
+                           type="password"
+                                          className="form-control"
+                                          name="password"
+                                          value={this.state.password}
+                                          onChange={this.onChangePassword}
+                                          validations={[required]}
+                           />
+                      </p>
+                      <p>
+                          <button className="btn btn-primary btn-block"
+                                                  disabled={this.state.loading}>
+                                                  {this.state.loading && (
+                                                  <span className="spinner-border spinner-border-sm"></span>)}
+                                                  Login
+                                                  </button>
 
-          <Form
-            onSubmit={this.handleLogin}
-            ref={c => {
-              this.form = c;
-            }}
-          >
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <Input
-                type="text"
-                className="form-control"
-                name="username"
-                value={this.state.username}
-                onChange={this.onChangeUsername}
-                validations={[required]}
-              />
-            </div>
+                      </p>
+                      {this.state.message && (
+                             <div className="form-group">
+                              <div className="alert alert-danger" role="alert">
+                                 {this.state.message}
+                               </div>
+                              </div>
+                             )}
 
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <Input
-                type="password"
-                className="form-control"
-                name="password"
-                value={this.state.password}
-                onChange={this.onChangePassword}
-                validations={[required]}
-              />
-            </div>
 
-            <div className="form-group">
-              <button
-                className="btn btn-primary btn-block"
-                disabled={this.state.loading}
-              >
-                {this.state.loading && (
-                  <span className="spinner-border spinner-border-sm"></span>
-                )}
-                <span>Login</span>
-              </button>
-            </div>
 
-            {this.state.message && (
-              <div className="form-group">
-                <div className="alert alert-danger" role="alert">
-                  {this.state.message}
-                </div>
+
+
+
+                  </form>
+                  <footer>
+                      <p>First time? <Link to="/register">Create an account</Link>.</p>
+                      <p><Link to="/">Back to Homepage</Link>.</p>
+                  </footer>
               </div>
-            )}
-            <CheckButton
-              style={{ display: "none" }}
-              ref={c => {
-                this.checkBtn = c;
-              }}
-            />
-          </Form>
-        </div>
-      </div>
+              </div>
+                  </Content>
+                </Layout>
+              </Layout>
     );
   }
 }
