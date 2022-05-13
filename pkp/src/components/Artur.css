@@ -1,0 +1,59 @@
+/***    Box Główny     ***/
+#mainBoxA{
+height: 65vh;
+width: 145vh;
+background: #444;
+border-radius: 50px;
+
+}
+
+#boxA{
+height: 10vh;
+width: 10vh;
+background: #696969;
+border-radius: 10px;
+margin: 1%;
+float: left;
+border: #fff;
+}
+
+#xd
+{
+color: #000;
+}
+div.a {
+  text-align: center;
+}
+.row
+{
+margin-left: 1%;
+}
+
+#btnK2 {
+    height: 5vh;
+    display: block;
+    width: 100%;
+    border: none;
+    background: #BDB76B;
+    color: #000;
+    border-radius: 290px;
+}
+
+#btnK2:hover {
+    background: 	#7CFC00;
+    transition: all .5s
+}
+
+
+
+
+
+
+
+
+
+/***    wyśrodkowanie divów    ***/
+#wrapper1 {
+width:300px;
+margin: 0 auto;
+}
