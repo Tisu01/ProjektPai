@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Layout} from 'antd';
 import {Link} from "react-router-dom";
-import {useNavigate} from "react-router"
+import {useNavigate} from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import AuthService from "../services/auth-service";
 import "./styles.css";
@@ -56,7 +56,10 @@ class Login extends Component {
       message: "",
       loading: true,
       clickButton: true
-    });
+    }, () => {
+
+
+
 
     //this.form.validateAll();
 
@@ -85,6 +88,7 @@ class Login extends Component {
         loading: false
       });
     }
+    });
   }
 
   render() {
@@ -148,6 +152,9 @@ class Login extends Component {
                                </div>
                               </div>
                              )}
+
+
+
 
                   </form>
                   <footer>

@@ -4,6 +4,8 @@ import './Register.css';
 import {Layout} from 'antd';
 import {Link} from "react-router-dom";
 import AuthService from "../services/auth-service";
+import {useNavigate} from "react-router";
+import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 const {  Content } = Layout;
 const required = value => {
   if (!value) {
@@ -45,7 +47,11 @@ const vpassword = value => {
   }
 };
 
-export default class Register extends Component {
+export const  withNavigation = (Component : Component) => {
+    return props => <Component {...props} navigate={useNavigate()} />;
+}
+
+class Register extends Component {
   constructor(props) {
     super(props);
     this.handleRegister = this.handleRegister.bind(this);
@@ -88,7 +94,7 @@ export default class Register extends Component {
       message: "",
       successful: false,
       clickButton: true
-    });
+    }, () => {
 
     //this.form.validateAll();
 
@@ -99,8 +105,8 @@ export default class Register extends Component {
         this.state.password
       ).then(
       () => {
-                //this.props.history.push("/home");
-                window.location.reload();
+                this.props.navigate('/login');
+                window.location.reload('/');
               },
         response => {
           this.setState({
@@ -124,95 +130,11 @@ export default class Register extends Component {
         }
       );
     }
+    });
   }
 
   render() {
     return (
-    /*
-      <div className="col-md-12">
-        <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
-
-          <Form
-            onSubmit={this.handleRegister}
-            ref={c => {
-              this.form = c;
-            }}
-          >
-            {!this.state.successful && (
-              <div>
-                <div className="form-group">
-                  <label htmlFor="username">Username</label>
-                  <Input
-                    type="text"
-                    className="form-control"
-                    name="username"
-                    value={this.state.username}
-                    onChange={this.onChangeUsername}
-                    validations={[required, vusername]}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
-                  <Input
-                    type="text"
-                    className="form-control"
-                    name="email"
-                    value={this.state.email}
-                    onChange={this.onChangeEmail}
-                    validations={[required, email]}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="password">Password</label>
-                  <Input
-                    type="password"
-                    className="form-control"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.onChangePassword}
-                    validations={[required, vpassword]}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <button className="btn btn-primary btn-block">Sign Up</button>
-                </div>
-              </div>
-            )}
-
-            {this.state.message && (
-              <div className="form-group">
-                <div
-                  className={
-                    this.state.successful
-                      ? "alert alert-success"
-                      : "alert alert-danger"
-                  }
-                  role="alert"
-                >
-                  {this.state.message}
-                </div>
-              </div>
-            )}
-            <CheckButton
-              style={{ display: "none" }}
-              ref={c => {
-                this.checkBtn = c;
-              }}
-            />
-          </Form>
-        </div>
-      </div>
-//{!this.state.successful && ( )}
-      */
-
       <Layout>
                 <Content
                   className="site-layout-background"
@@ -295,3 +217,5 @@ export default class Register extends Component {
     );
   }
 }
+
+export default withNavigation(Register);
