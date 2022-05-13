@@ -1,3 +1,32 @@
+#rowID{
+background: #8ab595;
+border-radius: 10px;
+}
+
+#rowMain{
+background: #e0d3e0;
+border-radius: 10px;
+justify-content: center
+}
+
+#price{
+padding-left:30%;
+}
+#btncho{
+padding-left:25%;
+}
+
+#cols{
+margin: 2%;
+}
+
+#innerBox{
+margin: 2%;
+width: 100px;
+height: 100px;
+
+}
+
 /*
 .train_box {
     position: relative;

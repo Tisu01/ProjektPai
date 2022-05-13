@@ -10,12 +10,22 @@ import {
   InputNumber,
   Card,
 } from 'antd';
+
+
+
+
 export default class Connections extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      content: ""
+    title: 'Connection',
+    from: 'Kielce',
+    fromTime: '10:00',
+    to: "Radom",
+    toTime: "11:00",
+    prize: "10.00",
+    content: ""
     };
   }
 
@@ -39,39 +49,37 @@ export default class Connections extends Component {
 
   render() {
   return (
-  /*
-          <div className="train_box">
-            <div className="arrival"><p>arrival</p></div>
-            <div className="departure"><p>departure</p></div>
-            <div className="price"><p>price:</p></div>
-            <div className="btn"><Button type="primary" size='large'>choose</Button></div>
-            <a className="right carousel-control slick-arrow" href="#" role="button" data-slide="next" aria-disabled="true">
-            <span className="fa fa-angle-left" aria-hidden="true"></span>
-            </a>
 
-
-          </div>
-*/
-<div className="row">
-  <div className="col-sm-6">
-    <div className="card">
+<div className="row" id="rowID">
+  <div className="col-sm-3" >
+    <div className="card" id="cardBody" style={{width: '18rem'}}>
       <div className="card-body">
-        <h5 className="card-title">to jeszcze ne dziala ale</h5>
-        <p className="card-text">chce tu zrobic wybieranie polaczen</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
+      <div className="row" id="rowMain">
+      <div className="col-xs-6" id="innerBox" style={{margin: '0 auto'}}>
+      <div className="Tiittle" style={{color: '#00a34f', margin: '0 auto'}}>From:</div>
+      <div className="City"  style={{color: '#00a34f', margin: '0 auto'}}> {this.state.from}</div>
+      <div className="Time" style={{color: '#00a34f', margin: '0 auto'}}>{this.state.fromTime}</div>
+      <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>10.05.2022</div>
+        </div>
+      <div className="col-xs-6" id="innerBox" style={{margin: '0 auto'}}>
+      <div className="Tiittle" style={{color: '#00a34f', margin: '0 auto'}}> To:</div>
+            <div className="City" style={{color: '#00a34f', margin: '0 auto'}}> {this.state.to}</div>
+            <div className="Time" style={{color: '#00a34f', margin: '0 auto'}}>{this.state.toTime}</div>
+            <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>10.05.2022</div>
+       </div>
+      </div>
+        <div>
+        <div>
+        <div id="price" style={{margin: '0 auto'}}>Prize:</div>
+        <div id="price" style={{margin: '0 auto'}}>{this.state.prize} zł</div>
+        </div>
+         </div>
+         <div id="btncho" style={{margin: '0 auto'}}><a href="#" className="btn btn-primary">Choose</a></div>
+
+
       </div>
     </div>
   </div>
-  <div className="col-sm-6">
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
-        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" className="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
 </div>
           );
 
