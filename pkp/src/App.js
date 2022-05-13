@@ -80,6 +80,13 @@ class App extends Component {
                 Home
               </Link>
             </li>
+             <li className="nav-item">
+              <Link to={"/connections"} className="nav-link">
+                  Connections
+                 </Link>
+               </li>
+
+
 
             {showModeratorBoard && (
               <li className="nav-item">

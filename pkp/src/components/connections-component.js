@@ -2,22 +2,12 @@ import React, { Component } from "react";
 import { Navigate} from "react-router-dom";
 import AuthService from "../services/auth-service";
 import UserService from "../services/user-service";
-import { DownloadOutlined  } from '@ant-design/icons';
 import './connections_style.css';
 import {
-  Layout,
-  Form,
   Input,
   Button,
-  Radio,
-  Select,
-  Cascader,
   DatePicker,
   InputNumber,
-  TreeSelect,
-  Switch,
-  Space,
-  Tooltip,
   Card,
 } from 'antd';
 export default class Connections extends Component {
@@ -49,6 +39,7 @@ export default class Connections extends Component {
 
   render() {
   return (
+  /*
           <div className="train_box">
             <div className="arrival"><p>arrival</p></div>
             <div className="departure"><p>departure</p></div>
@@ -60,7 +51,28 @@ export default class Connections extends Component {
 
 
           </div>
+*/
+<div className="row">
+  <div className="col-sm-6">
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">to jeszcze ne dziala ale</h5>
+        <p className="card-text">chce tu zrobic wybieranie polaczen</p>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div className="col-sm-6">
+    <div className="card">
+      <div className="card-body">
+        <h5 className="card-title">Special title treatment</h5>
+        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" className="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
 
+</div>
           );
 
 }
