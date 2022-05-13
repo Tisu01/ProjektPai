@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 import './Home.css';
 import { RightOutlined,SearchOutlined  } from '@ant-design/icons';
 import {Link} from "react-router-dom";
@@ -14,10 +14,11 @@ import {
   InputNumber,
   TreeSelect,
   Switch,
+  Space,
+  Tooltip,
 } from 'antd';
 import UserService from "../services/user-service";
 const { Header, Content } = Layout;
-
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -47,27 +48,39 @@ export default class Home extends Component {
 
   render() {
   return (
-        <Form labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
+
+<div>
+      <Form labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
       initialValues={{size: '20'}}
       onValuesChange='50'
       size='50'
     >
 
       <Form.Item label="FROM">
-        <Input />
+        <Input type='text'/>
       </Form.Item>
       <Form.Item label="TO:">
-        <Input />
+        <Input type='text'/>
        </Form.Item>
 
-      <Form.Item label="DATE">
-        <DatePicker />
-      </Form.Item>
+<Form.Item label="DATE:">
+        <Input type='date'/>
+       </Form.Item>
+
+
         <br />
       <Form.Item>
-        <Button>SEARCH</Button>
+        <Button type="primary" size="large">
+              Search
+            </Button>
+
       </Form.Item>
     </Form>
+
+
+</div>
+
+
     );
   }
 }

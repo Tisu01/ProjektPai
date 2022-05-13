@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Layout, Menu} from 'antd';
-import {Link, withRouter, useNavigate } from "react-router-dom";
-
+import { Layout} from 'antd';
+import {Link} from "react-router-dom";
 
 import AuthService from "../services/auth-service";
 import "./styles.css";
 
-const { Header, Content } = Layout;
+const {Content } = Layout;
 const required = value => {
   if (!value) {
     return (
@@ -60,8 +59,8 @@ class Login extends Component {
     if (this.state.clickButton === true) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.navigate('/home');
-          window.location.reload();
+          //this.props.navigate('/home');
+          window.location.reload('/home');
         },
         error => {
           const resMessage =
