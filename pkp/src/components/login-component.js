@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Layout} from 'antd';
 import {Link} from "react-router-dom";
-
+import {useNavigate} from "react-router"
+import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import AuthService from "../services/auth-service";
 import "./styles.css";
 
@@ -15,6 +16,9 @@ const required = value => {
     );
   }
 };
+export const  withNavigation = (Component : Component) => {
+    return props => <Component {...props} navigate={useNavigate()} />;
+}
 
 class Login extends Component {
 
@@ -59,8 +63,8 @@ class Login extends Component {
     if (this.state.clickButton === true) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          //this.props.navigate('/home');
-          window.location.reload('/home');
+          this.props.navigate('/home');
+          window.location.reload('/');
         },
         error => {
           const resMessage =
@@ -160,4 +164,4 @@ class Login extends Component {
 }
 
 
-export default Login;
+export default withNavigation(Login);

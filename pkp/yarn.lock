@@ -1624,6 +1624,13 @@
     "@svgr/plugin-svgo" "^5.5.0"
     "loader-utils" "^2.0.0"
 
+"@swc/helpers@^0.3.13":
+  "integrity" "sha512-A1wswJhnqaLRn8uYVQ8YiNTtY5i/JIPmV08EXXjjTresIkUVUEUaFv/wXVhGXfRNYMvHPkuoMR1Nb6NgpxGjNg=="
+  "resolved" "https://registry.npmjs.org/@swc/helpers/-/helpers-0.3.13.tgz"
+  "version" "0.3.13"
+  dependencies:
+    "tslib" "^2.4.0"
+
 "@testing-library/dom@^8.5.0", "@testing-library/dom@>=7.21.4":
   "integrity" "sha512-9VHgfIatKNXQNaZTtLnalIy0jNZzY35a4S3oi08YAt9Hv1VsfZ/DfA45lM8D/UhtHBGJ4/lGwp0PZkVndRkoOQ=="
   "resolved" "https://registry.npmjs.org/@testing-library/dom/-/dom-8.13.0.tgz"
@@ -3817,6 +3824,11 @@
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.116.tgz"
   "version" "1.4.116"
 
+"element-internals-polyfill@^1.1.4":
+  "integrity" "sha512-HCk2OXleHaRqrSyju+43TIUUb0/AkY6bV4tRbz8YFAWYeL+zUT6Mk0HmvbfZ19vq7zV9E+9dkNCxkYzEEVlCyA=="
+  "resolved" "https://registry.npmjs.org/element-internals-polyfill/-/element-internals-polyfill-1.1.4.tgz"
+  "version" "1.1.4"
+
 "emittery@^0.8.1":
   "integrity" "sha512-uDfvUjVrfGJJhymx/kz6prltenw1u7WrCg1oa94zYY8xxVpLLUu045LAT0dhDZdXG58/EpPL/5kA180fQ/qudg=="
   "resolved" "https://registry.npmjs.org/emittery/-/emittery-0.8.1.tgz"
@@ -4734,7 +4746,7 @@
   "resolved" "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
   "version" "1.2.0"
 
-"history@^5.2.0":
+"history@^5", "history@^5.2.0":
   "integrity" "sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ=="
   "resolved" "https://registry.npmjs.org/history/-/history-5.3.0.tgz"
   "version" "5.3.0"
@@ -7717,7 +7729,15 @@
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
   "version" "0.11.0"
 
-"react-router-dom@^6.3.0":
+"react-router-class-tools@^0.1.2":
+  "integrity" "sha512-c+1eOpnlDmGZsY8E7m9qx05tBRjlzyYiLPIwQsD+2S7eXf4Lafo4PJUhVKtcEy7AID8i/Bbvb2iCIFWGj1LlHg=="
+  "resolved" "https://registry.npmjs.org/react-router-class-tools/-/react-router-class-tools-0.1.2.tgz"
+  "version" "0.1.2"
+  dependencies:
+    "history" "^5"
+    "web-utility" "^3.6.1"
+
+"react-router-dom@^6", "react-router-dom@^6.3.0":
   "integrity" "sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw=="
   "resolved" "https://registry.npmjs.org/react-router-dom/-/react-router-dom-6.3.0.tgz"
   "version" "6.3.0"
@@ -7808,7 +7828,7 @@
     "shallow-equal" "^1.0.0"
     "uuid" "^3.1.0"
 
-"react@*", "react@^18.0.0", "react@>= 16", "react@>=0.13", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.3.0", "react@>=16.3.2", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0", "react@>=16.9.0":
+"react@*", "react@^18.0.0", "react@>= 16", "react@>=0.13", "react@>=0.14.0", "react@>=15.0.0", "react@>=16", "react@>=16.0.0", "react@>=16.11.0", "react@>=16.3.0", "react@>=16.3.2", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0", "react@>=16.9.0":
   "integrity" "sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.0.0.tgz"
   "version" "18.0.0"
@@ -8840,10 +8860,10 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2.0.3":
-  "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
-  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
-  "version" "2.3.1"
+"tslib@^2.0.3", "tslib@^2.4.0":
+  "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
+  "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
+  "version" "2.4.0"
 
 "tsutils@^3.21.0":
   "integrity" "sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA=="
@@ -8908,7 +8928,7 @@
   dependencies:
     "is-typedarray" "^1.0.0"
 
-"typescript@^3.2.1 || ^4", "typescript@>= 2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
+"typescript@^3.2.1 || ^4", "typescript@^4.1.0", "typescript@>= 2.7", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
   "integrity" "sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg=="
   "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.6.4.tgz"
   "version" "4.6.4"
@@ -9096,6 +9116,15 @@
   "version" "1.7.3"
   dependencies:
     "minimalistic-assert" "^1.0.0"
+
+"web-utility@^3.6.1":
+  "integrity" "sha512-DaLyrGDbhjimyRnXFL4WdQE+8G3jDQPOGC2G41rMfSv4bbsKcmTDghB1b2pdxJs1KvJnm/FQA48m00GeyRZ54w=="
+  "resolved" "https://registry.npmjs.org/web-utility/-/web-utility-3.6.5.tgz"
+  "version" "3.6.5"
+  dependencies:
+    "@swc/helpers" "^0.3.13"
+    "element-internals-polyfill" "^1.1.4"
+    "regenerator-runtime" "^0.13.9"
 
 "web-vitals@^2.1.0":
   "integrity" "sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg=="
