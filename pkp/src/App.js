@@ -14,6 +14,7 @@ import BoardUser from "./components/board-user-component";
 import BoardModerator from "./components/board-moderator-component";
 import BoardAdmin from "./components/board-admin-component";
 import Connections from "./components/connections-component";
+import Artur from "./components/artur";
 
 
 //import AuthVerify from "./common/auth-verify";
@@ -85,6 +86,11 @@ class App extends Component {
                   Connections
                  </Link>
                </li>
+               <li className="nav-item">
+                   <Link to={"/artur"} className="nav-link">
+                        arturekXD
+                        </Link>
+                  </li>
 
 
 
@@ -107,7 +113,7 @@ class App extends Component {
             {currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Ticket
                 </Link>
               </li>
             )}
@@ -150,6 +156,7 @@ class App extends Component {
             <Route exact path={"/home"} element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/connections" element={<Connections />} />
+            <Route exact path="/artur" element={<Artur />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />}  />
             <Route path="/user" element={<BoardUser />} />
@@ -157,11 +164,6 @@ class App extends Component {
             <Route path="/admin" element={<BoardAdmin />} />
             </Routes>
         </div>
-
-        <div className="footer">
-            <h2>to jest stopka ale chcialbym zeby to bylo wieksze zeby mozna bylo podawac informacje ale tylko na stronie domowej</h2>
-        </div>
-
 
 
         </Router>

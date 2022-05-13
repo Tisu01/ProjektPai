@@ -49,11 +49,12 @@ export default class Home extends Component {
   render() {
   return (
 
-<div>
-      <Form labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
+<div id="mainBox">
+      <Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
       initialValues={{size: '20'}}
       onValuesChange='50'
       size='50'
+
     >
 
       <Form.Item label="FROM">
@@ -70,13 +71,16 @@ export default class Home extends Component {
 
         <br />
       <Form.Item>
-        <Button type="primary" size="large">
+        <Button type="primary" size="large" id="searchbtn">
               Search
             </Button>
 
       </Form.Item>
     </Form>
 
+        <div id="box1" >
+            <h2>tutaj trzeba zrobic jakies informacje łądnie</h2>
+        </div>
 
 </div>
 
