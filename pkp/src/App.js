@@ -28,6 +28,7 @@ class App extends Component {
     this.logOut = this.logOut.bind(this);
 
     this.state = {
+       //from: this.props.match.params.from,
       showModeratorBoard: false,
       showAdminBoard: false,
       currentUser: undefined,
@@ -35,6 +36,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+  //var from = this.state.from;
     const user = AuthService.getCurrentUser();
 
     if (user) {
@@ -156,7 +158,7 @@ class App extends Component {
             <Route exact path={"/home"} element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/connections" element={<Connections />} />
-            <Route exact path="/connections/:from" element={<Connections />} />
+            <Route exact path="/connections/:from"  element={<Connections />}  />
             <Route exact path="/artur" element={<Artur />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />}  />

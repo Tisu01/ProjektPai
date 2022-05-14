@@ -4,6 +4,10 @@ import AuthService from "../services/auth-service";
 import UserService from "../services/user-service";
 import ConnectionService from "../services/ConnectionsService";
 import './connections_style.css';
+import { useParams} from 'react-router-dom'
+import {useNavigate} from "react-router";
+import { RouteComponentProps, withRouter } from 'react-router-class-tools';
+
 import {
   Input,
   Button,
@@ -12,15 +16,16 @@ import {
   Card,
 } from 'antd';
 
+export const  withNavigation = (Component : Component) => {
+    return props => <Component {...props} navigate={useNavigate()} />;
+}
 
-
-
-export default class Connections extends Component {
+class Connections extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        //from: this.props.match.params.from,
+        from: this.props.match.params.from,
         listConnections: []
     };
   }
@@ -46,8 +51,9 @@ export default class Connections extends Component {
   render() {
   return (
 <div className="row" id="rowID">
+<h2>{this.state.from}</h2>
             {
-             this.state.listConnections.map(
+             this.state.listConnections.filter(conn => conn.dataStarting===this.state.from).map(
              connection =>
   <div className="col-sm-3" key = {connection.id}  style={{margin: '2%'}}>
     <div className="card" id="cardBody" style={{width: '18rem'}} >
@@ -78,9 +84,12 @@ export default class Connections extends Component {
       </div>
     </div>
   </div>
+
   )}
 </div>
           );
 
 }
 }
+
+export default withRouter(Connections);

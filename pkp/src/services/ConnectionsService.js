@@ -7,11 +7,11 @@ class ConnectionService {
     getConnection(){
         return axios.get(Connection_API_BASE_URL);
     }
-
+/*
     getConnectionById(ConnectionId){
         return axios.get(Connection_API_BASE_URL + '/' + ConnectionId);
     }
-/*
+
     updateEmployee(employee, employeeId){
         return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId, employee);
     }

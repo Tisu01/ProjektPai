@@ -3,6 +3,7 @@ import './Home.css';
 import { RightOutlined,SearchOutlined  } from '@ant-design/icons';
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router";
+import { useParams} from 'react-router-dom'
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import {
   Layout,
@@ -22,9 +23,12 @@ import {
 import UserService from "../services/user-service";
 const { Header, Content } = Layout;
 
+
 export const  withNavigation = (Component : Component) => {
     return props => <Component {...props} navigate={useNavigate()} />;
 }
+//render={(props) => ( <Connections from={props.match.params.from}/>)}
+
 
 class Home extends Component {
   constructor(props) {
@@ -57,6 +61,7 @@ class Home extends Component {
       }
 
   viewConnection(){
+  //this.props.navigate('/connections',this.state.from);
    this.props.navigate(`/connections/${this.state.from}`);
   }
 
