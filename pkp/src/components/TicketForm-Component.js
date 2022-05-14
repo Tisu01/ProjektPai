@@ -7,6 +7,7 @@ import {
   Form,
   Input,
   Button,
+  Select,
 } from 'antd';
 import UserService from "../services/user-service";
 
@@ -14,7 +15,7 @@ export const  withNavigation = (Component : Component) => {
     return props => <Component {...props} navigate={useNavigate()} />;
 }
 
-class Home extends Component {
+class TicketForm extends Component {
   constructor(props) {
     super(props);
     this.handleFrom = this.handleFrom.bind(this);
@@ -54,24 +55,26 @@ class Home extends Component {
   render() {
   return (
 
-<div id="mainBox">
-
-      <Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
+<div id="ticketBox">
+<h2>Tutaj informacje o polaczeniu</h2>
+<Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
       initialValues={{size: '20'}}
       onValuesChange='50'
-      size='50'
-
-    >
-
-      <Form.Item label="FROM" value={this.state.from} onChange={this.handleFrom}>
+      size='50'>
+      <Form.Item label="NAME" value={this.state.from} onChange={this.handleFrom}>
         <Input type='text' />
       </Form.Item>
-      <Form.Item label="TO:" value={this.state.to} onChange={this.handleTo}>
+      <Form.Item label="SURNAME" value={this.state.to} onChange={this.handleTo}>
         <Input type='text' />
        </Form.Item>
 
-<Form.Item label="DATE:" value={this.state.date} onChange={this.handleDate}>
-        <Input type='date' />
+        <Form.Item label="ULGA" value={this.state.date} onChange={this.handleDate}>
+        <select className="custom-select" id="inputGroupSelect01">
+            <option value="0">0% biedaku</option>
+            <option value="1">50% studencie</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
        </Form.Item>
 
 
@@ -85,10 +88,6 @@ class Home extends Component {
 
     </Form>
 
-        <div id="box1" >
-            <h2>tutaj trzeba zrobic jakies informacje łądnie</h2>
-        </div>
-
 </div>
 
 
@@ -96,4 +95,4 @@ class Home extends Component {
   }
 }
 
-export default withNavigation(Home);
+export default withNavigation(TicketForm)

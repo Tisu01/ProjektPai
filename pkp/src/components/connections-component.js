@@ -55,7 +55,7 @@ class Connections extends Component {
 <div className="row" id="rowID">
 
             {
-             this.state.listConnections.filter(conn => conn.dataStarting===this.state.date && conn.stationStarting===this.state.from && conn.stationFinal===this.state.to ).map(
+             this.state.listConnections.filter(conn => conn.dataStarting===this.state.date && conn.stationStarting===this.state.from && conn.stationFinal===this.state.to).map(
              connection =>
   <div className="col-sm-3" key = {connection.id}  style={{margin: '2%'}}>
     <div className="card" id="cardBody" style={{width: '18rem'}} >
