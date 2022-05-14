@@ -4,7 +4,12 @@ height: 65vh;
 width: 145vh;
 background: #444;
 border-radius: 50px;
-
+}
+#mainBoxC{
+height: 15vh;
+width: 145vh;
+background: #444;
+border-radius: 50px;
 }
 
 #boxA{
@@ -16,11 +21,32 @@ margin: 1%;
 float: left;
 border: #fff;
 }
-
-#xd
-{
-color: #000;
+#form111{
+text-align: center;
+margin: 1%;
+background: #696969;
+float: center;
+width: 70%;
+border-radius: 10px;
+transform: translate(20%, 10%)
 }
+#btnOK1{
+    top: 100%;
+    left: 100%;
+    margin-right: 2%;
+    transform: translate(20%, 10%)
+}
+#label11{
+    top: 100%;
+    left: 100%;
+    margin-right: 2%;
+    transform: translate(20%, 10%)
+}
+#btnOK1:hover {
+    background: 	#7CFC00;
+    transition: all .5s
+}
+
 div.a {
   text-align: center;
 }

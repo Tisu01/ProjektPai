@@ -45,9 +45,9 @@ export default class Artur extends Component {
 
   render() {
   return (
-
+      <div id="mainBoxB">
        <div id="mainBoxA">
-       <div id="wrapper1">  <div className="row" > <div id="xd>" > <h2> Wybierz swoje miejsce </h2> </div> </div> </div>
+       <div id="wrapper1">  <div className="row" >  <h2> Wybierz swoje miejsce </h2> </div> </div>
        <div className="row" >
 
            <div id="boxA"><div className="a"> <h2>1</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
@@ -106,7 +106,19 @@ export default class Artur extends Component {
                         </div>
 
             </div>
+            <div id="mainBoxC">
 
+             <form id="form111">
+                     <label id="label11">
+                       Wybrano Siedzenie Numer:
+
+                        <input type="text" disabled/>
+                     </label>
+                     <input type="submit" id="btnOK1" value="OK" />
+                   </form>
+
+             </div>
+             </div>
           );
 }
 }
