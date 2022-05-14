@@ -9,6 +9,9 @@ border-radius: 10px;
 justify-content: center
 }
 
+#cardBody{
+float: left;
+}
 #price{
 padding-left:30%;
 }

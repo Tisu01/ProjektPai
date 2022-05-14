@@ -156,6 +156,7 @@ class App extends Component {
             <Route exact path={"/home"} element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/connections" element={<Connections />} />
+            <Route exact path="/connections/:from" element={<Connections />} />
             <Route exact path="/artur" element={<Artur />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />}  />
