@@ -25,7 +25,9 @@ class Connections extends Component {
     super(props);
 
     this.state = {
+        date: this.props.match.params.date,
         from: this.props.match.params.from,
+        to: this.props.match.params.to,
         listConnections: []
     };
   }
@@ -51,9 +53,9 @@ class Connections extends Component {
   render() {
   return (
 <div className="row" id="rowID">
-<h2>{this.state.from}</h2>
+
             {
-             this.state.listConnections.filter(conn => conn.dataStarting===this.state.from).map(
+             this.state.listConnections.filter(conn => conn.dataStarting===this.state.date && conn.stationStarting===this.state.from && conn.stationFinal===this.state.to ).map(
              connection =>
   <div className="col-sm-3" key = {connection.id}  style={{margin: '2%'}}>
     <div className="card" id="cardBody" style={{width: '18rem'}} >
@@ -61,13 +63,13 @@ class Connections extends Component {
       <div className="row" id="rowMain">
       <div className="col-xs-6" id="innerBox" style={{margin: '0 auto'}}>
       <div className="Tiittle" style={{color: '#00a34f', margin: '0 auto'}}>From:</div>
-      <div className="City"  style={{color: '#00a34f', margin: '0 auto'}}> Kielce</div>
+      <div className="City"  style={{color: '#00a34f', margin: '0 auto'}}> {connection.stationStarting}</div>
       <div className="Time" style={{color: '#00a34f', margin: '0 auto'}}>{connection.timeStarting}</div>
       <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>{connection.dataStarting}</div>
         </div>
       <div className="col-xs-6" id="innerBox" style={{margin: '0 auto'}}>
       <div className="Tiittle" style={{color: '#00a34f', margin: '0 auto'}}> To:</div>
-            <div className="City" style={{color: '#00a34f', margin: '0 auto'}}> Radom</div>
+            <div className="City" style={{color: '#00a34f', margin: '0 auto'}}> {connection.stationFinal}</div>
             <div className="Time" style={{color: '#00a34f', margin: '0 auto'}}>{connection.timeFinal}</div>
             <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>{connection.dataFinal}</div>
        </div>

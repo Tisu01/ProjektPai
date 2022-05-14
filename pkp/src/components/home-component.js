@@ -61,8 +61,8 @@ class Home extends Component {
       }
 
   viewConnection(){
-  //this.props.navigate('/connections',this.state.from);
-   this.props.navigate(`/connections/${this.state.from}`);
+
+   this.props.navigate(`/connections/${this.state.date}/${this.state.from}/${this.state.to}`);
   }
 
 
