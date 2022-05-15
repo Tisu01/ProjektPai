@@ -94,7 +94,8 @@ class Login extends Component {
   render() {
 
     return (
-      <Layout>
+
+      <Layout >
                <Layout>
                   <Content
                     className="site-layout-background"
@@ -102,6 +103,8 @@ class Login extends Component {
                       padding: 24,
                       margin: 0,
                       minHeight: 280,
+                      background: '#2f747a',
+                      borderRadius: '10px',
                     }}
                   >
                   <div id="wrapper">
@@ -166,6 +169,7 @@ class Login extends Component {
                   </Content>
                 </Layout>
               </Layout>
+
     );
   }
 }

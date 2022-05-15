@@ -9,7 +9,7 @@ import {
   Button,
   Select,
 } from 'antd';
-import UserService from "../services/user-service";
+
 
 export const  withNavigation = (Component : Component) => {
     return props => <Component {...props} navigate={useNavigate()} />;
@@ -46,9 +46,9 @@ class TicketForm extends Component {
         });
       }
 
-  viewConnection(){
+  viewSite(){
 
-   this.props.navigate(`/connections/${this.state.date}/${this.state.from}/${this.state.to}`);
+   this.props.navigate("/artur");
   }
 
 
@@ -76,17 +76,28 @@ class TicketForm extends Component {
             <option value="3">Three</option>
           </select>
        </Form.Item>
+        <Form.Item label="SITE" >
+                   <Button type="primary" size="large" id="searchbtn"   onClick={ () => this.viewSite()} >
+                     Choose
+
+                    </Button>
+
+         </Form.Item>
 
 
-        <br />
       <Form.Item>
+      <br />
         <Button type="primary" size="large" id="searchbtn"   onClick={ () => this.viewConnection()} >
-              Search
+              Buy Ticket
             </Button>
       </Form.Item>
 
 
+
     </Form>
+
+    <div style={{float: 'left'}}>fsdfshgfhgfhfghfghfghfghfghgfhfhfghfg</div>
+
 
 </div>
 

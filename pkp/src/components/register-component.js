@@ -142,6 +142,8 @@ class Register extends Component {
                     padding: 24,
                     margin: 0,
                     minHeight: 280,
+                    background: '#2f747a',
+                    borderRadius: '10px',
                   }}
                 >
                 <div id="wrapper">

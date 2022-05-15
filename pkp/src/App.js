@@ -28,7 +28,6 @@ class App extends Component {
     this.logOut = this.logOut.bind(this);
 
     this.state = {
-       //from: this.props.match.params.from,
       showModeratorBoard: false,
       showAdminBoard: false,
       currentUser: undefined,
@@ -36,7 +35,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-  //var from = this.state.from;
+
     const user = AuthService.getCurrentUser();
 
     if (user) {
@@ -70,7 +69,8 @@ class App extends Component {
 
     return (
 
-      <div>
+      <div  style={{backgroundImage:`url("https://www.aizul.xyz/img/background.jpg")`}}>
+
       <Router>
 
         <nav className="navbar navbar-expand navbar-dark bg-secondary">
@@ -152,7 +152,7 @@ class App extends Component {
         </nav>
 
 
-        <div className="container mt-3">
+        <div className="container mt-3" >
             <Routes>
             <Route exact path={"/"} element={<Home />} />
             <Route exact path={"/home"} element={<Home />} />
@@ -170,6 +170,10 @@ class App extends Component {
 
 
         </Router>
+
+        <footer style={{background: '#6c757d', marginTop: '2%', height: '82px'}}>
+        <h2>Prace wykonali kiepy</h2>
+        </footer>
       </div>
 
     );
@@ -177,43 +181,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-/*
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-
-import Home from './views/Home';
-import Login from './views/Login';
-import Register from './views/Register';
-import ForgetPassword from './views/ForgetPassword';
-import 'antd/dist/antd.min.css'
-
-function App() {
-  return (
-    <BrowserRouter>
-        <Routes>
-
-            <Route path="/" element={<Home />}/>
-            <Route path="/about" element={<About />}/>
-            <Route path="/login" element={<Login />}/>
-            <Route path="/register" element={<Register />}/>
-            <Route path="/forget-password" element={<ForgetPassword />}/>
-
-
-        </Routes>
-       </BrowserRouter>
-  );
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-
-export default App;
-
-*/

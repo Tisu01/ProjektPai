@@ -21,8 +21,15 @@ export default class Artur extends Component {
     super(props);
 
     this.state = {
+    number: null,
       content: ""
     };
+  }
+
+  takeNumber(numberSite){
+        this.setState({
+                number: numberSite
+              });
   }
 
   componentDidMount() {
@@ -47,10 +54,10 @@ export default class Artur extends Component {
   return (
       <div id="mainBoxB">
        <div id="mainBoxA">
-       <div id="wrapper1">  <div className="row" >  <h2> Wybierz swoje miejsce </h2> </div> </div>
+       <div id="wrapper1">  <div className="row" style={{color: '#fff'}} >  <h2 > Wybierz swoje miejsce </h2> </div> </div>
        <div className="row" >
 
-           <div id="boxA"><div className="a"> <h2>1</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>1</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(1)}><CheckOutlined /></Button></div>
            <div id="boxA"><div className="a"> <h2>2</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
            <div id="boxA"><div className="a"> <h2>3</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
            <div id="boxA"><div className="a"> <h2>4</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
@@ -104,20 +111,15 @@ export default class Artur extends Component {
             <div id="boxA"><div className="a"> <h2>44</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
 
                         </div>
-
-            </div>
-            <div id="mainBoxC">
-
-             <form id="form111">
-                     <label id="label11">
+                <form id="form111">
+                     <label id="label11" style={{color: '#fff'}}>
                        Wybrano Siedzenie Numer:
-
-                        <input type="text" disabled/>
+                        <input type="text" disabled value={this.state.number}  style={{color: '#fff'}}/>
                      </label>
                      <input type="submit" id="btnOK1" value="OK" />
                    </form>
+            </div>
 
-             </div>
              </div>
           );
 }
