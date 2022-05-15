@@ -19,7 +19,11 @@ width:300px;
 margin: 0 auto;
 }
 h2 {
-    font-weight: 300
+    font-weight: 300;
+    color: #000;
+}
+h5 {
+  color: #000;
 }
 
 form {
@@ -83,7 +87,10 @@ form span {
 #reset_pass_lbl {
     float: left
 }
+#MainBoxLogin{
+height: 820px;
 
+}
 
 
 

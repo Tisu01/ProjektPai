@@ -58,16 +58,16 @@ export default class Artur extends Component {
        <div className="row" >
 
            <div id="boxA"><div className="a"> <h2>1</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(1)}><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>2</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>3</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>4</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>5</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>6</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>7</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>8</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>9</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>10</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
-           <div id="boxA"><div className="a"> <h2>11</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>2</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(2)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>3</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(3)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>4</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(4)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>5</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(5)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>6</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(6)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>7</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(7)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>8</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(8)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>9</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(9)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>10</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(10)}><CheckOutlined /></Button></div>
+           <div id="boxA"><div className="a"> <h2>11</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(11)}><CheckOutlined /></Button></div>
            <div id="boxA"><div className="a"> <h2>12</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
            <div id="boxA"><div className="a"> <h2>13</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
            <div id="boxA"><div className="a"> <h2>14</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
@@ -111,6 +111,7 @@ export default class Artur extends Component {
             <div id="boxA"><div className="a"> <h2>44</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
 
                         </div>
+
                 <form id="form111">
                      <label id="label11" style={{color: '#fff'}}>
                        Wybrano Siedzenie Numer:
@@ -118,8 +119,8 @@ export default class Artur extends Component {
                      </label>
                      <input type="submit" id="btnOK1" value="OK" />
                    </form>
-            </div>
 
+            </div>
              </div>
           );
 }

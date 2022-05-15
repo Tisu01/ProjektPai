@@ -69,7 +69,7 @@ class App extends Component {
 
     return (
 
-      <div  style={{backgroundImage:`url("https://www.aizul.xyz/img/background.jpg")`}}>
+      <div  style={{backgroundImage:`url("https://www.aizul.xyz/img/background.jpg")`,backgroundSize: 'cover'}}>
 
       <Router>
 
@@ -152,7 +152,7 @@ class App extends Component {
         </nav>
 
 
-        <div className="container mt-3" >
+        <div className="tuk" >
             <Routes>
             <Route exact path={"/"} element={<Home />} />
             <Route exact path={"/home"} element={<Home />} />
@@ -170,10 +170,10 @@ class App extends Component {
 
 
         </Router>
-
-        <footer style={{background: '#6c757d', marginTop: '2%', height: '82px'}}>
+<footer style={{background: '#6c757d', height: '82px'}}>
         <h2>Prace wykonali kiepy</h2>
         </footer>
+
       </div>
 
     );

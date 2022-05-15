@@ -135,17 +135,8 @@ class Register extends Component {
 
   render() {
     return (
-      <Layout>
-                <Content
-                  className="site-layout-background"
-                  style={{
-                    padding: 24,
-                    margin: 0,
-                    minHeight: 280,
-                    background: '#2f747a',
-                    borderRadius: '10px',
-                  }}
-                >
+
+                <div id="MainBoxRegister">
                 <div id="wrapper">
              <div className="text-center m-5-auto">
                   <h2>Join us</h2>
@@ -213,9 +204,8 @@ class Register extends Component {
                   </footer>
               </div>
               </div>
-                </Content>
-              </Layout>
 
+</div>
     );
   }
 }

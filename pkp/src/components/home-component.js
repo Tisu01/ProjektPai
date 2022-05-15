@@ -53,9 +53,9 @@ class Home extends Component {
 
   render() {
   return (
-
+<div className="BoxHome" >
 <div id="mainBox">
-
+<div className="row" >
       <Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
       initialValues={{size: '20'}}
       onValuesChange='50'
@@ -84,13 +84,16 @@ class Home extends Component {
 
 
     </Form>
-
-        <div id="box1" >
-            <h2>tutaj trzeba zrobic jakies informacje łądnie</h2>
-        </div>
-
+    <div id="boxdispaly" style={{backgroundImage:`url("https://www.rynek-kolejowy.pl//img/20201211172144plr.jpg_900-528.jpg")`}}> </div>
 </div>
 
+
+</div>
+<div id="box1" >
+
+            <h2>tutaj trzeba zrobic jakies informacje łądnie</h2>
+        </div>
+</div>
 
     );
   }

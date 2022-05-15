@@ -95,19 +95,8 @@ class Login extends Component {
 
     return (
 
-      <Layout >
-               <Layout>
-                  <Content
-                    className="site-layout-background"
-                    style={{
-                      padding: 24,
-                      margin: 0,
-                      minHeight: 280,
-                      background: '#2f747a',
-                      borderRadius: '10px',
-                    }}
-                  >
-                  <div id="wrapper">
+      <div id="MainBoxLogin" >
+                  <div id="wrapper" >
               <div className="text-center m-5-auto">
                   <h2>Sign in to us</h2>
                   <form onSubmit={this.handleLogin}
@@ -166,10 +155,7 @@ class Login extends Component {
                   </footer>
               </div>
               </div>
-                  </Content>
-                </Layout>
-              </Layout>
-
+                 </div>
     );
   }
 }

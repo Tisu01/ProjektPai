@@ -54,9 +54,12 @@ class TicketForm extends Component {
 
   render() {
   return (
-
+<div className="MainBoxTicket" >
 <div id="ticketBox">
+
+<div id="wrapper2">
 <h2>Tutaj informacje o polaczeniu</h2>
+
 <Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
       initialValues={{size: '20'}}
       onValuesChange='50'
@@ -96,12 +99,12 @@ class TicketForm extends Component {
 
     </Form>
 
-    <div style={{float: 'left'}}>fsdfshgfhgfhfghfghfghfghfghgfhfhfghfg</div>
-
 
 </div>
 
+</div>
 
+</div>
     );
   }
 }

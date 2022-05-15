@@ -12,10 +12,17 @@ label {
   padding: 40px 40px;
 
 }
+.tuk {
+justify-content: center;
+margin-top: 2%;
+margin-left: 2%;
+margin-right: 2%;
 
 .mt-3{
 background: #2f747a;
 border-radius: 10px;
+background: #fff;
+
 
 
 }
