@@ -97,8 +97,8 @@ class Login extends Component {
 
       <div id="MainBoxLogin" >
                   <div id="wrapper" >
-              <div className="text-center m-5-auto">
-                  <h2>Sign in to us</h2>
+              <div className="text-center m-5-auto"  >
+                  <h1  style={{fontWeight: 'bold'}}>Sign in to us</h1>
                   <form onSubmit={this.handleLogin}
                                     ref={c => {
                                       this.form = c;
@@ -137,6 +137,7 @@ class Login extends Component {
                                                   </button>
 
                       </p>
+
                       {this.state.message && (
                              <div className="form-group">
                               <div className="alert alert-danger" role="alert">
@@ -150,6 +151,11 @@ class Login extends Component {
 
                   </form>
                   <footer>
+                  <p>
+                                                    <button className="btn btn-primary btn-block">
+                                                           Login with Social
+                                                      </button>
+                                          </p>
                       <p>First time? <Link to="/register">Create an account</Link>.</p>
                       <p><Link to="/">Back to Homepage</Link>.</p>
                   </footer>
