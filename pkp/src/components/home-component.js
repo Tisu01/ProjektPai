@@ -9,6 +9,10 @@ import {
   Button,
 } from 'antd';
 import UserService from "../services/user-service";
+import img1 from '../images/img1.jpg'
+import img2 from '../images/img2.jpg'
+import img3 from '../images/img3.jpg'
+import img4 from '../images/img4.jpg'
 
 export const  withNavigation = (Component : Component) => {
     return props => <Component {...props} navigate={useNavigate()} />;
@@ -90,8 +94,12 @@ class Home extends Component {
 
 </div>
 <div id="box1" >
-
-            <h2>tutaj trzeba zrobic jakies informacje łądnie</h2>
+<div className="row" >
+<div id="boxII" > <img id="img" src={img1}/> </div>
+<div id="boxII" > <img src={img2}/> </div>
+<div id="boxII" > <img src={img3}/> </div>
+<div id="boxII" > <img src={img4}/> </div>
+        </div>
         </div>
 </div>
 

@@ -44,9 +44,17 @@ width: 1200px;
 
 }
 #box1{
-height: 300px;
+height: 320px;
 background: #333;
 border-radius: 10px;
+margin: 0 auto;
+}
+#boxII{
+height: 320px;
+width: 272px;
+background: #696969;
+border-radius: 10px;
+margin-left: 2%;
 }
 
 #mainBox{
@@ -83,3 +91,4 @@ width: 1200px;
 width:390px;
 margin: 0 auto;
 }
+

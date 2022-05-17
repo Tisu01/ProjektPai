@@ -170,8 +170,9 @@ class App extends Component {
 
 
         </Router>
-<footer style={{background: '#6c757d', height: '82px'}}>
-        <h2>Prace wykonali kiepy</h2>
+<footer style={{background: '#6c757d', height: '90px'}}>
+        <h2>Kontakt,</h2>
+         <h2>Wykonali: Artur (Koks) Świerczyński Piotr (Piter) Tkaczyk Przemysław (Przemuś) Giersiński</h2>
         </footer>
 
       </div>

@@ -55,7 +55,8 @@ export default class Artur extends Component {
       <div id="mainBoxB">
        <div id="mainBoxA">
        <div id="wrapper1">  <div className="row" style={{color: '#fff'}} >  <h2 > Wybierz swoje miejsce </h2> </div> </div>
-       <div className="row" >
+
+       <div className="row" id="row11" >
 
            <div id="boxA"><div className="a"> <h2>1</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(1)}><CheckOutlined /></Button></div>
            <div id="boxA"><div className="a"> <h2>2</h2> </div> <Button type="primary" size="large" id="btnK2" onClick={ () => this.takeNumber(2)}><CheckOutlined /></Button></div>
@@ -82,9 +83,10 @@ export default class Artur extends Component {
 
             </div>
 
+
                     <div className="row" style={{ height:'40px' }}>   </div>
 
-            <div className="row" >
+            <div className="row" id="row11" >
 
 
             <div id="boxA"><div className="a"> <h2>23</h2> </div> <Button type="primary" size="large" id="btnK2"><CheckOutlined /></Button></div>
