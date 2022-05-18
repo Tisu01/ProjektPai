@@ -34,6 +34,7 @@
 }
 #formRadius{
 border-radius: 10px;
+margin-left: 4%;
 }
 
 .BoxHome{
@@ -53,8 +54,10 @@ margin: 0 auto;
 height: 320px;
 width: 272px;
 background: #696969;
-border-radius: 10px;
+border-radius: 10%;
 margin-left: 2%;
+margin-top:2%;
+float: left;
 }
 
 #mainBox{

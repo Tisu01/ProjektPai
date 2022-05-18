@@ -93,14 +93,14 @@ class Home extends Component {
 
 
 </div>
-<div id="box1" >
-<div className="row" >
-<div id="boxII" > <img id="img" src={img1}/> </div>
-<div id="boxII" > <img src={img2}/> </div>
-<div id="boxII" > <img src={img3}/> </div>
-<div id="boxII" > <img src={img4}/> </div>
-        </div>
-        </div>
+
+
+<div id="boxII" > <img id="img" src={img1} style={{borderRadius:'10%'}} /> </div>
+<div id="boxII" > <img src={img2} style={{borderRadius:'10%'}}/> </div>
+<div id="boxII" > <img src={img3} style={{borderRadius:'10%'}}/> </div>
+<div id="boxII" > <img src={img4} style={{borderRadius:'10%'}}/> </div>
+
+
 </div>
 
     );
