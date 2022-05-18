@@ -143,7 +143,7 @@ disabled = { this.state.loading } >
 </form>
     < footer >
     <p>
-    <a href="http://localhost:8080/apis/login/oauth2/code/google" class="linkGoogle" >
+    <a href="http://localhost:8080/home" class="linkGoogle" >
         <button className="btn btn-primary btn-block" >
             Login with Google
             < /button>

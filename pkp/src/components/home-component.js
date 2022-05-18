@@ -79,10 +79,10 @@ size = '50'
                                 < div id = "boxdispaly" style = {{ backgroundImage: `url("https://www.rynek-kolejowy.pl//img/20201211172144plr.jpg_900-528.jpg")` }}> </div>
                                     < /div>
                                     < /div>
-                                    < div id = "boxII" > <img id="img" src = { img1 } style = {{ borderRadius: '10%' }} /> </div >
-                                        <div id="boxII" > <img src={ img2 } style = {{ borderRadius: '10%' }}/> </div >
-                                            <div id="boxII" > <img src={ img3 } style = {{ borderRadius: '10%' }}/> </div >
-                                                <div id="boxII" > <img src={ img4 } style = {{ borderRadius: '10%' }}/> </div >
+                                    < div id = "boxII" > <img id="img" alt="" src = { img1 } style = {{ borderRadius: '10%' }} /> </div >
+                                        <div id="boxII" > <img alt="" src={ img2 } style = {{ borderRadius: '10%' }}/> </div >
+                                            <div id="boxII" > <img alt="" src={ img3 } style = {{ borderRadius: '10%' }}/> </div >
+                                                <div id="boxII" > <img alt="" src={ img4 } style = {{ borderRadius: '10%' }}/> </div >
 
 
                                                     </div>

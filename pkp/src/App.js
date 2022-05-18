@@ -17,6 +17,7 @@ import Connections from "./components/connections-component";
 import Artur from "./components/artur";
 import TicketForm from "./components/TicketForm-Component";
 import Social from "./components/Social-component";
+import Payment from "./components/Payment";
 //import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
 
@@ -98,7 +99,11 @@ class App extends Component {
                                           Dla arturka
                                           </Link>
                                     </li>
-
+                    <li className="nav-item">
+                                     <Link to={"/payment"} className="nav-link">
+                                          Payment
+                                          </Link>
+                                    </li>
 
 
             {showModeratorBoard && (
@@ -165,6 +170,7 @@ class App extends Component {
             <Route exact path="/ticketForm" element={<TicketForm/>} />
             <Route exact path="/connections/:date/:from/:to"  element={<Connections />}  />
             <Route exact path="/social" element={<Social />} />
+            <Route exact path="/payment" element={<Payment />} />
             <Route exact path="/artur" element={<Artur />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />}  />
