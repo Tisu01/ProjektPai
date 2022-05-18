@@ -16,7 +16,7 @@ import BoardAdmin from "./components/board-admin-component";
 import Connections from "./components/connections-component";
 import Artur from "./components/artur";
 import TicketForm from "./components/TicketForm-Component";
-
+import Social from "./components/Social-component";
 //import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
 
@@ -93,6 +93,11 @@ class App extends Component {
                         arturekXD
                         </Link>
                   </li>
+                   <li className="nav-item">
+                                     <Link to={"/social"} className="nav-link">
+                                          Dla arturka
+                                          </Link>
+                                    </li>
 
 
 
@@ -159,6 +164,7 @@ class App extends Component {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/ticketForm" element={<TicketForm/>} />
             <Route exact path="/connections/:date/:from/:to"  element={<Connections />}  />
+            <Route exact path="/social" element={<Social />} />
             <Route exact path="/artur" element={<Artur />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />}  />

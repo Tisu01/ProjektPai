@@ -152,9 +152,11 @@ class Login extends Component {
                   </form>
                   <footer>
                   <p>
+                  <a href="http://localhost:8080/apis/login/oauth2/code/google" class="linkGoogle">
                                                     <button className="btn btn-primary btn-block">
-                                                           Login with Social
+                                                           Login with Google
                                                       </button>
+                                                      </a>
                                           </p>
                       <p>First time? <Link to="/register">Create an account</Link>.</p>
                       <p><Link to="/">Back to Homepage</Link>.</p>
