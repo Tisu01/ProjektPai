@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Home.css';
+import '../styles/Home.css';
 import { useNavigate } from "react-router";
 //import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import {

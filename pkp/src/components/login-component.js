@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import AuthService from "../services/auth-service";
-import "./styles.css";
+import "../styles/styles.css";
 
 const { Content } = Layout;
 const required = value => {

@@ -1,6 +1,6 @@
 import React, { Component, Modal, Button, useState, render} from "react";
-import './styles.css';
-import Artur from "./artur"
+import '../styles/styles.css';
+import Artur from "./siteModal"
 
 const Site = ({ handleClose, show, children, handler }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";

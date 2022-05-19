@@ -4,7 +4,7 @@ import { Navigate} from "react-router-dom";
 import AuthService from "../services/auth-service";
 import UserService from "../services/user-service";
 import { CheckOutlined,CheckCircleOutlined  } from '@ant-design/icons';
-import './Artur.css';
+import '../styles/siteModal.css';
 import {
   Input,
   Button,

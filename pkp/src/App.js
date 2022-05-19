@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Routes, Route, Link, BrowserRouter as Router } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import "./App.css";
 
 import AuthService from "./services/auth-service";
@@ -14,9 +15,9 @@ import BoardUser from "./components/board-user-component";
 import BoardModerator from "./components/board-moderator-component";
 import BoardAdmin from "./components/board-admin-component";
 import Connections from "./components/connections-component";
-import Artur from "./components/artur";
+import SiteModal from "./components/siteModal";
 import TicketForm from "./components/TicketForm-Component";
-import Social from "./components/Social-component";
+import ChangeData from "./components/ChangeData-component";
 import Payment from "./components/Payment";
 //import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
@@ -89,22 +90,11 @@ class App extends Component {
                   buy ticket
                  </Link>
                </li>
-               <li className="nav-item">
-                   <Link to={"/artur"} className="nav-link">
-                        arturekXD
-                        </Link>
-                  </li>
-                   <li className="nav-item">
-                                     <Link to={"/social"} className="nav-link">
-                                          Dla arturka
-                                          </Link>
-                                    </li>
                     <li className="nav-item">
                                      <Link to={"/payment"} className="nav-link">
                                           Payment
                                           </Link>
                                     </li>
-
 
             {showModeratorBoard && (
               <li className="nav-item">
@@ -132,11 +122,19 @@ class App extends Component {
           </div>
 
           {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
-                </Link>
+            <div className="navbar-nav ml-auto"  style={{paddingRight:'2%'}}>
+              <li className="nav-item" >
+                    <div class="dropdown show" >
+                    <a class="btn btn-secondary dropdown-toggle" href="/profile" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     {currentUser.username}
+                    </a>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"  style={{paddingRight:'5%'}}>
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <a class="dropdown-item" href="/changeData">Change Password</a>
+                        <a class="dropdown-item" href="#">Something else</a>
+                      </div>
+                </div>
+
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={this.logOut}>
@@ -169,9 +167,9 @@ class App extends Component {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/ticketForm" element={<TicketForm/>} />
             <Route exact path="/connections/:date/:from/:to"  element={<Connections />}  />
-            <Route exact path="/social" element={<Social />} />
+            <Route exact path="/changeData" element={<ChangeData />} />
             <Route exact path="/payment" element={<Payment />} />
-            <Route exact path="/artur" element={<Artur />} />
+            <Route exact path="/siteModal" element={<SiteModal />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />}  />
             <Route path="/user" element={<BoardUser />} />

@@ -1,9 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Dropdown,  DropdownButton} from "react";
 import { Navigate} from "react-router-dom";
 import AuthService from "../services/auth-service";
-
-
-
 export default class Profile extends Component {
 
   constructor(props) {
@@ -37,8 +34,12 @@ export default class Profile extends Component {
         <header className="jumbotron">
           <h3>
             <strong>{currentUser.username}</strong> Profile
+
+
+
           </h3>
         </header>
+
         <p>
           <strong>Token:</strong>{" "}
           {currentUser.accessToken.substring(0, 20)} ...{" "}

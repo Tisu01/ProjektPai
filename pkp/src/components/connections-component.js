@@ -3,7 +3,7 @@ import { Navigate} from "react-router-dom";
 import AuthService from "../services/auth-service";
 import UserService from "../services/user-service";
 import ConnectionService from "../services/ConnectionsService";
-import './connections_style.css';
+import '../styles/connections_style.css';
 import { useParams} from 'react-router-dom'
 import {useNavigate} from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';

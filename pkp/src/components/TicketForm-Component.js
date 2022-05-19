@@ -1,8 +1,9 @@
 import React, { Component} from "react";
-import './Home.css';
+import '../styles/Home.css';
 import {useNavigate} from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import Site from "./Site.js"
+import Payment from "./Payment.js"
 import {
   Layout,
   Form,
@@ -92,7 +93,7 @@ showModal = () => {
      <Form.Item>
         <h2>miejsce: {this.state.site}</h2>
       </Form.Item>
-
+        <Payment></Payment>
 
     </Form>
 

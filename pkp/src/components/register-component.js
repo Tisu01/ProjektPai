@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { isEmail } from "validator";
-import './Register.css';
+import '../styles/Register.css';
 import {Layout} from 'antd';
 import {Link} from "react-router-dom";
 import AuthService from "../services/auth-service";
