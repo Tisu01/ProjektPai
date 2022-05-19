@@ -52,7 +52,7 @@ class Artur extends Component {
 
   render() {
   return (
-      <div id="mainBoxB">
+      <div id="mainBoxB"  style={{marginTop: '10%'}} >
        <div id="mainBoxA">
        <div id="wrapper1">  <div className="row" style={{color: '#fff'}} >  <h2 > Wybierz swoje miejsce </h2> </div> </div>
 

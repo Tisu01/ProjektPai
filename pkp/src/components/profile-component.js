@@ -60,7 +60,7 @@ export default class Profile extends Component {
       </div>: null}
 
 
-      <h2>kurwo</h2>
+
       </div>
     );
   }

@@ -1,12 +1,16 @@
 import axios from 'axios';
 
-const Connection_API_BASE_URL = "http://localhost:8080/api/connection/view";
+const Connection_API_BASE_URL = "http://localhost:8080/api/connection";
 
 class ConnectionService {
 
     getConnection(){
-        return axios.get(Connection_API_BASE_URL);
+        return axios.get(Connection_API_BASE_URL+ '/view');
     }
+
+    createConnection(connection){
+            return axios.post(Connection_API_BASE_URL+'/add', connection);
+        }
 /*
     getConnectionById(ConnectionId){
         return axios.get(Connection_API_BASE_URL + '/' + ConnectionId);
