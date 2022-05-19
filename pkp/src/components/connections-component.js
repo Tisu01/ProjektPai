@@ -52,7 +52,7 @@ class Connections extends Component {
 
   render() {
   return (
-<div className="row" id="rowID">
+<div className="row" >
 
             {
              this.state.listConnections.
@@ -60,30 +60,36 @@ class Connections extends Component {
              && conn.stationStarting===this.state.from
              && conn.stationFinal===this.state.to).map(
              connection =>
-  <div className="col-sm-3" key = {connection.id}  style={{margin: '2%'}}>
-    <div className="card" id="cardBody" style={{width: '18rem'}} >
+  <div className="col-sm-3" key = {connection.id}  style={{marginLeft: '2%'}}>
+    <div className="card" id="cardBody" style={{width: '18rem', borderRadius: '10%'}} >
       <div className="card-body">
+      <div className="row" id="rowMain" style={{background: '#f7f7f7'}}>
+      <div className="Tiittle" style={{color: '#74918e', margin: '0 auto'}}>From</div>
+      <div className="Tiittle" style={{color: '#74918e', margin: '0 auto'}}>To</div>
+         </div>
+
       <div className="row" id="rowMain">
-      <div className="col-xs-6" id="innerBox" style={{margin: '0 auto'}}>
-      <div className="Tiittle" style={{color: '#00a34f', margin: '0 auto'}}>From:</div>
-      <div className="City"  style={{color: '#00a34f', margin: '0 auto'}}> {connection.stationStarting}</div>
-      <div className="Time" style={{color: '#00a34f', margin: '0 auto'}}>{connection.timeStarting}</div>
+      <div className="col-xs-6" id="innerBox" style={{margin: '2%'}}>
+
+      <div className="City"  style={{color: '#00a34f', margin: '0 auto' , fontSize: '24px'}}> {connection.stationStarting}</div>
+      <div className="Time" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}>{connection.timeStarting}</div>
       <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>{connection.dataStarting}</div>
         </div>
-      <div className="col-xs-6" id="innerBox" style={{margin: '0 auto'}}>
-      <div className="Tiittle" style={{color: '#00a34f', margin: '0 auto'}}> To:</div>
-            <div className="City" style={{color: '#00a34f', margin: '0 auto'}}> {connection.stationFinal}</div>
-            <div className="Time" style={{color: '#00a34f', margin: '0 auto'}}>{connection.timeFinal}</div>
+      <div className="col-xs-6" id="innerBox" style={{margin: '2%'}}>
+
+            <div className="City" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}> {connection.stationFinal}</div>
+            <div className="Time" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}>{connection.timeFinal}</div>
             <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>{connection.dataFinal}</div>
        </div>
       </div>
         <div>
-        <div>
-        <div id="price" style={{margin: '0 auto'}}>Prize:</div>
-        <div id="price" style={{margin: '0 auto'}}>{connection.prize} zł</div>
+         <br/>
+        <div className="row" id="rowMain">
+
+        <div style={{margin: '3%'}}>Prize: {connection.prize} zł</div>
         </div>
          </div>
-         <div id="btncho" style={{margin: '0 auto'}}><a href="#" className="btn btn-primary">Choose</a></div>
+         <div id="btncho" style={{margin: '5%'}}><a href="#" className="btn btn-primary" >Choose</a></div>
 
 
       </div>
@@ -98,3 +104,4 @@ class Connections extends Component {
 }
 
 export default withRouter(Connections);
+

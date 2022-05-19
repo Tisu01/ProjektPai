@@ -4,17 +4,16 @@ border-radius: 10px;
 }
 
 #rowMain{
-background: #e0d3e0;
+background: #eee;
 border-radius: 10px;
-justify-content: center
+justify-content: center;
+height: 20%;
 }
 
 #cardBody{
 float: left;
 }
-#price{
-padding-left:30%;
-}
+
 #btncho{
 padding-left:25%;
 }
