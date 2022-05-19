@@ -7,6 +7,8 @@ import '../styles/connections_style.css';
 import { useParams} from 'react-router-dom'
 import {useNavigate} from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import {
   Input,
@@ -25,6 +27,9 @@ class Connections extends Component {
     super(props);
 
     this.state = {
+        doModal: false,
+        currentUsers: {},
+        takeIdConn: null,
         date: this.props.match.params.date,
         from: this.props.match.params.from,
         to: this.props.match.params.to,
@@ -32,7 +37,17 @@ class Connections extends Component {
     };
   }
 
+  onBuyTicket(id)  {
+        this.setState({ takeIdConn: id });
+    }
+
   componentDidMount() {
+   const currentUser = AuthService.getCurrentUser();
+     this.setState({ currentUser: currentUser });
+        if(currentUser === null){
+        this.setState({ doModal: true });
+        }
+
     ConnectionService.getConnection().then(
       response => {
         this.setState({
@@ -51,7 +66,13 @@ class Connections extends Component {
   }
 
   render() {
+
+      const { currentUser, doModal } = this.state;
   return (
+  <div>
+  {doModal && (<div ><h2>ABY KUPIC BILET MUSISZ SIE ZALOGOWAC</h2>
+                 </div>
+                      )}
 <div className="row" >
 
             {
@@ -89,19 +110,27 @@ class Connections extends Component {
         <div style={{margin: '3%'}}>Prize: {connection.prize} zł</div>
         </div>
          </div>
-         <div id="btncho" style={{margin: '5%'}}><a href="#" className="btn btn-primary" >Choose</a></div>
+         <div id="btncho" style={{margin: '5%'}}><button className="btn btn-primary" onClick={() => this.onBuyTicket(connection.id)}>Choose</button></div>
+
+
 
 
       </div>
+
     </div>
+
   </div>
 
   )}
+
+</div>
+{this.state.takeIdConn}
 </div>
           );
 
 }
 }
 
-export default withRouter(Connections);
+export default withRouter(Connections)
+
 

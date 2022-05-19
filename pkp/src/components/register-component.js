@@ -96,7 +96,7 @@ class Register extends Component {
       clickButton: true
     }, () => {
 
-    //this.form.validateAll();
+   //this.form.validateAll();
 
     if (this.state.clickButton === true) {
       AuthService.register(

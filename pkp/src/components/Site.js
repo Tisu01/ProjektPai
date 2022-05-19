@@ -1,21 +1,25 @@
 import React, { Component, Modal, Button, useState, render} from "react";
 import '../styles/styles.css';
-import Artur from "./siteModal"
+import SiteModal from "./siteModal"
 
-const Site = ({ handleClose, show, children, handler }) => {
+const Site = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
+
 
   return (
     <div className={showHideClassName}>
+
       <section className="modal-main">
         {children}
-        <button type="button" onClick={ () => handleClose, handler}>
+        <div> </div>
+        <button type="button" onClick={handleClose}>
           Close
         </button>
-        <Artur></Artur>
+
       </section>
+
     </div>
   );
 };
-
+  //<SiteModal></SiteModal>
 export default Site;

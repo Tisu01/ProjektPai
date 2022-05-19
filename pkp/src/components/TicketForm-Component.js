@@ -4,6 +4,7 @@ import {useNavigate} from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import Site from "./Site.js"
 import Payment from "./Payment.js"
+import SiteModal from "./siteModal"
 import {
   Layout,
   Form,
@@ -19,27 +20,29 @@ export const  withNavigation = (Component : Component) => {
 
 class TicketForm extends Component {
   constructor(props) {
-    super(props);
+    super();
      this.state = {
     show: false,
-    site: ''
+    site: 2,
+    showSite: false
      };
+
      this.showModal = this.showModal.bind(this);
      this.hideModal = this.hideModal.bind(this);
-     this.handler = this.handler.bind(this)
+
   }
-  handler() {
-      this.setState({
-        site: 'some value'
-      })
-    }
+
+  showSite = () => {
+  this.setState({ showSite: true });
+  }
 
 showModal = () => {
     this.setState({ show: true });
   };
 
   hideModal = () => {
-    this.setState({ show: false });
+    this.setState({ show: false, site:'fdsf' });
+
   };
   viewSite(){
    //this.props.navigate("/artur");
@@ -47,6 +50,7 @@ showModal = () => {
 
 
   render() {
+const { showSite } = this.state;
   return (
 <div className="MainBoxTicket" >
 <div id="ticketBox">
@@ -74,10 +78,10 @@ showModal = () => {
           </select>
        </Form.Item>
         <Form.Item label="SITE" >
-        <Site show={this.state.show} handleClose={this.hideModal} handler = {this.handler}>
+        <Site show={this.state.show} handleClose={this.hideModal}>
                   <p>Modal</p>
                 </Site>
-                   <Button type="primary" size="large" id="searchbtn"   onClick={this.showModal} >
+                   <Button type="primary" size="large" id="searchbtn"  onClick={this.showSite}>
                      Choose
                     </Button>
 
@@ -94,19 +98,19 @@ showModal = () => {
         <h2>miejsce: {this.state.site}</h2>
       </Form.Item>
         <Payment></Payment>
-
     </Form>
 
-
 </div>
-
-</div>
-
 </div>
 
 
+</div>
     );
   }
 }
 
 export default withNavigation(TicketForm)
+
+//{showSite && (
+//                  <SiteModal></SiteModal>
+//                )}
