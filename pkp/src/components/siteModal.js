@@ -1,28 +1,21 @@
 
 import React, { Component } from "react";
-import { Navigate} from "react-router-dom";
 import AuthService from "../services/auth-service";
 import UserService from "../services/user-service";
 import { CheckOutlined,CheckCircleOutlined  } from '@ant-design/icons';
 import '../styles/siteModal.css';
 import {
-  Input,
   Button,
-  DatePicker,
-  InputNumber,
-  Card,
-  Layout,
-  Row, Col, Slider ,
 } from 'antd';
-const { Header, Footer, Sider, Content } = Layout;
 
-class Artur extends Component {
+
+class SiteModal extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
     number: null,
-      content: ""
+    content: ""
     };
   }
 
@@ -32,22 +25,10 @@ class Artur extends Component {
               });
   }
 
+
+
   componentDidMount() {
-    UserService.getPublicContent().then(
-      response => {
-        this.setState({
-          content: response.data
-        });
-      },
-      error => {
-        this.setState({
-          content:
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString()
-        });
-      }
-    );
+
   }
 
   render() {
@@ -117,9 +98,9 @@ class Artur extends Component {
                 <form id="form111">
                      <label id="label11" style={{color: '#fff'}}>
                        Wybrano Siedzenie Numer:
-                        <input type="text" disabled value={this.state.number}  style={{color: '#fff'}}/>
+                        <input type="text" disabled value={this.state.number}   style={{color: '#fff'}}/>
                      </label>
-                     <input type="submit" id="btnOK1" value={this.state.number}  onClick={this.props.handler} />
+                     <button type="button">Choose</button>
                    </form>
 
             </div>
@@ -127,4 +108,4 @@ class Artur extends Component {
           );
 }
 }
-export default Artur;
+export default SiteModal;

@@ -50,6 +50,8 @@ class Home extends Component {
         this.props.navigate(`/connections/${this.state.date}/${this.state.from}/${this.state.to}`);
     }
     render() {
+
+    const onClick = () => this.props.navigate('/information');
         return (
             <div className= "BoxHome" >
             <div id="mainBox" >
@@ -79,13 +81,11 @@ size = '50'
                                 < div id = "boxdispaly" style = {{ backgroundImage: `url("https://www.rynek-kolejowy.pl//img/20201211172144plr.jpg_900-528.jpg")` }}> </div>
                                     < /div>
                                     < /div>
-                                    < div id = "boxII" > <img id="img" alt="" src = { img1 } style = {{ borderRadius: '10%' }} /> </div >
-                                        <div id="boxII" > <img alt="" src={ img2 } style = {{ borderRadius: '10%' }}/> </div >
-                                            <div id="boxII" > <img alt="" src={ img3 } style = {{ borderRadius: '10%' }}/> </div >
-                                                <div id="boxII" > <img alt="" src={ img4 } style = {{ borderRadius: '10%' }}/> </div >
-
-
-                                                    </div>
+                                    < div id = "boxII" onClick={onClick} aria-hidden="true"> <img id="img" alt="" src = { img1 } style = {{ borderRadius: '10%' }} /> </div >
+                                    <div id="boxII" onClick={onClick}> <img alt="" src={ img2 } style = {{ borderRadius: '10%' }}/> </div >
+                                    <div id="boxII" onClick={onClick}> <img alt="" src={ img3 } style = {{ borderRadius: '10%' }}/> </div >
+                                    <div id="boxII" onClick={onClick}> <img alt="" src={ img4 } style = {{ borderRadius: '10%' }}/> </div >
+          </div>
 
     );
   }

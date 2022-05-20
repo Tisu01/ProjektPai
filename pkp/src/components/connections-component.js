@@ -2,11 +2,14 @@ import React, { Component } from "react";
 import { Navigate} from "react-router-dom";
 import AuthService from "../services/auth-service";
 import UserService from "../services/user-service";
+import TicketService from "../services/ticketService";
 import ConnectionService from "../services/ConnectionsService";
 import '../styles/connections_style.css';
 import { useParams} from 'react-router-dom'
 import {useNavigate} from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import {
   Input,
@@ -25,14 +28,35 @@ class Connections extends Component {
     super(props);
 
     this.state = {
+        doModal: false,
+        currentUsers: {},
+        takeIdConn: null,
         date: this.props.match.params.date,
         from: this.props.match.params.from,
         to: this.props.match.params.to,
         listConnections: []
-    };
+    }
+
+    this.createTicket = this.createTicket.bind(this);
   }
 
+  onBuyTicket(id)  {
+        this.setState({ takeIdConn: id });
+    }
+
+    createTicket = (id) => {
+            let ticket = {connection: id};
+            console.log('ticket => ' + JSON.stringify(ticket));
+            TicketService.createTicket(ticket);
+        }
+
   componentDidMount() {
+   const currentUser = AuthService.getCurrentUser();
+     this.setState({ currentUser: currentUser });
+        if(currentUser === null){
+        this.setState({ doModal: true });
+        }
+
     ConnectionService.getConnection().then(
       response => {
         this.setState({
@@ -48,10 +72,19 @@ class Connections extends Component {
         });
       }
     );
+
+
+
   }
 
   render() {
+
+      const { currentUser, doModal } = this.state;
   return (
+  <div>
+  {doModal && (<div ><h2>ABY KUPIC BILET MUSISZ SIE ZALOGOWAC</h2>
+                 </div>
+                      )}
 <div className="row" >
 
             {
@@ -89,19 +122,27 @@ class Connections extends Component {
         <div style={{margin: '3%'}}>Prize: {connection.prize} zł</div>
         </div>
          </div>
-         <div id="btncho" style={{margin: '5%'}}><a href="#" className="btn btn-primary" >Choose</a></div>
+         <div id="btncho" style={{margin: '5%'}}><a href="/ticketForm" className="btn btn-primary" onClick={() =>  this.createTicket(connection.id)}> Choose</a></div>
+
+
 
 
       </div>
+
     </div>
+
   </div>
 
   )}
+
+</div>
+{this.state.takeIdConn}
 </div>
           );
 
 }
 }
 
-export default withRouter(Connections);
+export default withRouter(Connections)
+
 

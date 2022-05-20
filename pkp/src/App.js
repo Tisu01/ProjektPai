@@ -19,6 +19,7 @@ import SiteModal from "./components/siteModal";
 import TicketForm from "./components/TicketForm-Component";
 import ChangeData from "./components/ChangeData-component";
 import Payment from "./components/Payment";
+import Information from "./components/information-component";
 //import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
 
@@ -95,7 +96,11 @@ class App extends Component {
                                           Payment
                                           </Link>
                                     </li>
-
+                 <li className="nav-item">
+                                     <Link to={"/information"} className="nav-link">
+                                         Information
+                                          </Link>
+                                    </li>
             {showModeratorBoard && (
               <li className="nav-item">
                 <Link to={"/mod"} className="nav-link">
@@ -169,6 +174,7 @@ class App extends Component {
             <Route exact path="/connections/:date/:from/:to"  element={<Connections />}  />
             <Route exact path="/changeData" element={<ChangeData />} />
             <Route exact path="/payment" element={<Payment />} />
+            <Route exact path="/information" element={<Information />} />
             <Route exact path="/siteModal" element={<SiteModal />} />
             <Route exact path="/register" element={<Register />} />
             <Route exact path="/profile" element={<Profile />}  />
