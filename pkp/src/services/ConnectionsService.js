@@ -9,11 +9,11 @@ class ConnectionService {
     }
 
     getConnectionById(connectionId){
-            return axios.get(Connection_API_BASE_URL+ '/one' + connectionId);
+            return axios.get(Connection_API_BASE_URL+ '/one/' + connectionId);
         }
 
     createConnection(connection){
-            return axios.post(Connection_API_BASE_URL+'/add', connection);
+            return axios.post(Connection_API_BASE_URL+'/add/', connection);
         }
 
 }

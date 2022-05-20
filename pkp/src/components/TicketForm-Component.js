@@ -5,6 +5,9 @@ import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import Site from "./Site.js"
 import Payment from "./Payment.js"
 import SiteModal from "./siteModal"
+import TicketService from "../services/ticketService";
+import ConnectionService from "../services/ConnectionsService";
+import AuthService from "../services/auth-service";
 import {
   Layout,
   Form,
@@ -24,7 +27,17 @@ class TicketForm extends Component {
      this.state = {
     show: false,
     site: 2,
-    showSite: false
+    showSite: false,
+    ticketData: [],
+    listConnection: [],
+    ticketConn: null,
+    stationStarting: '',
+    timeStarting: '',
+    dataStarting: '',
+    stationFinal: '',
+    timeFinal: '',
+    dataFinal: '',
+    prize: '',
      };
 
      this.showModal = this.showModal.bind(this);
@@ -36,20 +49,64 @@ class TicketForm extends Component {
   this.setState({ showSite: true });
   }
 
-showModal = () => {
+  showModal = () => {
     this.setState({ show: true });
   };
 
   hideModal = () => {
-    this.setState({ show: false, site:'fdsf' });
+    this.setState({ show: false });
 
   };
-  viewSite(){
-   //this.props.navigate("/artur");
-  }
 
+
+ componentDidMount() {
+//    const ticketsData = JSON.stringify(TicketService.getTicketOne());
+//
+//    this.setState({ ticketData: ticketsData })
+//      console.log('id => ' + JSON.stringify(this.state.ticketData));
+
+
+     TicketService.getTicketOne().then(
+      response => {
+        this.setState({
+          ticketData: response.data
+        });
+      },
+      error => {
+        this.setState({
+          ticketData:
+            (error.response && error.response.data) ||
+            error.message ||
+            error.toString()
+        });
+      },
+      this.state.ticketData.map(
+                    res => this.setState({ticketConn: res.connection}))
+    );
+
+
+
+    ConnectionService.getConnectionById(1).then(
+            response => {
+              this.setState({
+                listConnection: response.data
+              });
+            },
+            error => {
+              this.setState({
+                listConnection:
+                  (error.response && error.response.data) ||
+                  error.message ||
+                  error.toString()
+              });
+            }
+          );
+
+
+ }
 
   render() {
+
 const { showSite } = this.state;
   return (
 <div className="MainBoxTicket" >
@@ -67,6 +124,7 @@ const { showSite } = this.state;
       </Form.Item>
       <Form.Item label="SURNAME" >
         <Input type='text' />
+
        </Form.Item>
 
         <Form.Item label="ULGA"  >
@@ -84,10 +142,7 @@ const { showSite } = this.state;
                    <Button type="primary" size="large" id="searchbtn"  onClick={this.showSite}>
                      Choose
                     </Button>
-
          </Form.Item>
-
-
       <Form.Item>
       <br />
         <Button type="primary" size="large" id="searchbtn"   onClick={ () => this.viewConnection()} >
@@ -95,9 +150,9 @@ const { showSite } = this.state;
             </Button>
       </Form.Item>
      <Form.Item>
-        <h2>miejsce: {this.state.site}</h2>
+        <h2>miejsce: {this.state.site} {this.state.ticketConn}  </h2>
       </Form.Item>
-        <Payment></Payment>
+
     </Form>
 
 </div>

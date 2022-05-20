@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navigate} from "react-router-dom";
 import AuthService from "../services/auth-service";
 import UserService from "../services/user-service";
+import TicketService from "../services/ticketService";
 import ConnectionService from "../services/ConnectionsService";
 import '../styles/connections_style.css';
 import { useParams} from 'react-router-dom'
@@ -34,12 +35,20 @@ class Connections extends Component {
         from: this.props.match.params.from,
         to: this.props.match.params.to,
         listConnections: []
-    };
+    }
+
+    this.createTicket = this.createTicket.bind(this);
   }
 
   onBuyTicket(id)  {
         this.setState({ takeIdConn: id });
     }
+
+    createTicket = (id) => {
+            let ticket = {connection: id};
+            console.log('ticket => ' + JSON.stringify(ticket));
+            TicketService.createTicket(ticket);
+        }
 
   componentDidMount() {
    const currentUser = AuthService.getCurrentUser();
@@ -63,6 +72,9 @@ class Connections extends Component {
         });
       }
     );
+
+
+
   }
 
   render() {
@@ -110,7 +122,7 @@ class Connections extends Component {
         <div style={{margin: '3%'}}>Prize: {connection.prize} zł</div>
         </div>
          </div>
-         <div id="btncho" style={{margin: '5%'}}><button className="btn btn-primary" onClick={() => this.onBuyTicket(connection.id)}>Choose</button></div>
+         <div id="btncho" style={{margin: '5%'}}><a href="/ticketForm" className="btn btn-primary" onClick={() =>  this.createTicket(connection.id)}> Choose</a></div>
 
 
 
