@@ -95,3 +95,39 @@ width:390px;
 margin: 0 auto;
 }
 
+/***    Information   ***/
+#MainBoxInformation{
+height: 800px;
+}
+
+#BoxInf{
+height: 385px;
+width: 80%;
+border-radius: 10%;
+margin-left: 10%;
+margin-top: 2%;
+
+}
+#h2{
+color: #fff;
+font-style: "Times New Roman";
+margin: 1%;
+}
+#hi{
+color: #fff;
+font-style: "Times New Roman";
+margin: 2%;
+}
+#hi-2{
+color: #fff;
+Text-align: left;
+margin-left: 2%;
+}
+/***    wyśrodkowanie divów    ***/
+
+
+#wrapperi {
+width:1200px;
+margin: 0 auto;
+}
+
