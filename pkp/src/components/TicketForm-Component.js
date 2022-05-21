@@ -28,16 +28,15 @@ class TicketForm extends Component {
     show: false,
     site: 2,
     showSite: false,
-    ticketData: [],
     listConnection: [],
-    ticketConn: null,
     stationStarting: '',
     timeStarting: '',
     dataStarting: '',
     stationFinal: '',
     timeFinal: '',
     dataFinal: '',
-    prize: '',
+    prize: null,
+    train: '',
      };
 
      this.showModal = this.showModal.bind(this);
@@ -59,37 +58,24 @@ class TicketForm extends Component {
   };
 
 
+
  componentDidMount() {
-//    const ticketsData = JSON.stringify(TicketService.getTicketOne());
-//
-//    this.setState({ ticketData: ticketsData })
-//      console.log('id => ' + JSON.stringify(this.state.ticketData));
+   const ticketsDataConn = JSON.stringify(TicketService.getCurrentTicketConn());
 
 
-     TicketService.getTicketOne().then(
-      response => {
-        this.setState({
-          ticketData: response.data
-        });
-      },
-      error => {
-        this.setState({
-          ticketData:
-            (error.response && error.response.data) ||
-            error.message ||
-            error.toString()
-        });
-      },
-      this.state.ticketData.map(
-                    res => this.setState({ticketConn: res.connection}))
-    );
+    ConnectionService.getConnectionById(ticketsDataConn).then(
 
-
-
-    ConnectionService.getConnectionById(1).then(
             response => {
+            let connection = response.data;
               this.setState({
-                listConnection: response.data
+                stationStarting: connection.stationStarting,
+                stationFinal: connection.stationFinal,
+                dataStarting: connection.dataStarting,
+                dataFinal: connection.dataFinal,
+                timeStarting: connection.timeStarting,
+                timeFinal: connection.timeFinal,
+                prize: connection.prize,
+                train: connection.train
               });
             },
             error => {
@@ -105,15 +91,42 @@ class TicketForm extends Component {
 
  }
 
+
   render() {
 
 const { showSite } = this.state;
+
   return (
 <div className="MainBoxTicket" >
+
 <div id="ticketBox">
+
 
 <div id="wrapper2">
 <h2>Tutaj informacje o polaczeniu</h2>
+<div>
+
+ <div className="row" id="rowMain">
+      <div className="col-xs-6" id="innerBox" style={{margin: '2%'}}>
+
+      <div className="City"  style={{color: '#00a34f', margin: '0 auto' , fontSize: '24px'}}> {this.state.stationStarting}</div>
+      <div className="Time" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}>{this.state.timeStarting}</div>
+      <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>{this.state.dataStarting}</div>
+        </div>
+         <div className="col-xs-6" id="innerBox" style={{margin: '2%'}}>
+         <br/>
+         <h2> ----> </h2>
+         </div>
+      <div className="col-xs-6" id="innerBox" style={{margin: '2%'}}>
+
+            <div className="City" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}> {this.state.stationFinal}</div>
+            <div className="Time" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}>{this.state.timeFinal}</div>
+            <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>{this.state.dataFinal}</div>
+       </div>
+      </div>
+
+</div>
+
 
 <Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
       initialValues={{size: '20'}}
@@ -139,7 +152,7 @@ const { showSite } = this.state;
         <Site show={this.state.show} handleClose={this.hideModal}>
                   <p>Modal</p>
                 </Site>
-                   <Button type="primary" size="large" id="searchbtn"  onClick={this.showSite}>
+                   <Button type="primary" size="large" id="searchbtn"  onClick={this.showModal}>
                      Choose
                     </Button>
          </Form.Item>
@@ -150,7 +163,8 @@ const { showSite } = this.state;
             </Button>
       </Form.Item>
      <Form.Item>
-        <h2>miejsce: {this.state.site} {this.state.ticketConn}  </h2>
+        <h2>Site: {TicketService.getItemSite()} </h2>
+        <h2>Prize: {this.state.prize} </h2>
       </Form.Item>
 
     </Form>

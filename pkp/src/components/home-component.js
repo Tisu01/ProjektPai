@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import '../styles/Home.css';
 import { useNavigate } from "react-router";
-//import { RouteComponentProps, withRouter } from 'react-router-class-tools';
+import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import {
     Form,
     Input,
@@ -47,7 +47,14 @@ class Home extends Component {
         });
     }
     viewConnection() {
-        this.props.navigate(`/connections/${this.state.date}/${this.state.from}/${this.state.to}`);
+        let conn ={
+        from: this.state.from,
+        to: this.state.to,
+        date: this.state.date
+        };
+        localStorage.setItem("conn", JSON.stringify(conn));
+        this.props.navigate('/connections');
+        //this.props.navigate(`/connections/${this.state.date}/${this.state.from}/${this.state.to}`);
     }
     render() {
 

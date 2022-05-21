@@ -15,11 +15,11 @@ const Site = ({ handleClose, show, children }) => {
         <button type="button" onClick={handleClose}>
           Close
         </button>
-
+        <SiteModal></SiteModal>
       </section>
 
     </div>
   );
 };
-  //<SiteModal></SiteModal>
+
 export default Site;

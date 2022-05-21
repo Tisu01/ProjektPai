@@ -29,11 +29,8 @@ class Connections extends Component {
 
     this.state = {
         doModal: false,
-        currentUsers: {},
+        currentConn: {},
         takeIdConn: null,
-        date: this.props.match.params.date,
-        from: this.props.match.params.from,
-        to: this.props.match.params.to,
         listConnections: []
     }
 
@@ -51,11 +48,12 @@ class Connections extends Component {
         }
 
   componentDidMount() {
-   const currentUser = AuthService.getCurrentUser();
-     this.setState({ currentUser: currentUser });
-        if(currentUser === null){
-        this.setState({ doModal: true });
-        }
+  TicketService.createItemSite();
+  const currentConn = ConnectionService.getCurrentConn();
+    this.setState({
+        currentConn: currentConn
+        });
+
 
     ConnectionService.getConnection().then(
       response => {
@@ -73,13 +71,12 @@ class Connections extends Component {
       }
     );
 
-
-
   }
 
   render() {
 
-      const { currentUser, doModal } = this.state;
+      const { currentConn, doModal } = this.state;
+      console.log(currentConn.date);
   return (
   <div>
   {doModal && (<div ><h2>ABY KUPIC BILET MUSISZ SIE ZALOGOWAC</h2>
@@ -89,9 +86,9 @@ class Connections extends Component {
 
             {
              this.state.listConnections.
-             filter(conn => conn.dataStarting===this.state.date
-             && conn.stationStarting===this.state.from
-             && conn.stationFinal===this.state.to).map(
+             filter(conn => conn.dataStarting===currentConn.date
+             && conn.stationStarting===currentConn.from
+             && conn.stationFinal===currentConn.to).map(
              connection =>
   <div className="col-sm-3" key = {connection.id}  style={{marginLeft: '2%'}}>
     <div className="card" id="cardBody" style={{width: '18rem', borderRadius: '10%'}} >
@@ -136,10 +133,9 @@ class Connections extends Component {
   )}
 
 </div>
-{this.state.takeIdConn}
+
 </div>
           );
-
 }
 }
 

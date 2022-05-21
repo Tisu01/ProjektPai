@@ -16,5 +16,9 @@ class ConnectionService {
             return axios.post(Connection_API_BASE_URL+'/add/', connection);
         }
 
+       getCurrentConn() {
+              return JSON.parse(localStorage.getItem('conn'));
+            }
+
 }
 export default new ConnectionService()

@@ -17,7 +17,10 @@ class TicketService {
     }
 
     createTicket(ticket){
-        return axios.post(Ticket_API_BASE_URL + '/add', ticket);
+        return axios.post(Ticket_API_BASE_URL + '/add', ticket).then(response => {
+          localStorage.setItem("ticket", JSON.stringify(response.data));
+          return response.data;
+        });
     }
 
     updateTicketFirst(ticket, ticketId){
@@ -31,6 +34,24 @@ class TicketService {
     updateTicketThird(ticket, ticketId){
         return axios.put(Ticket_API_BASE_URL + '/third/' +  ticketId, ticket);
     }
+    getCurrentTicketConn() {
+        return JSON.parse(localStorage.getItem('ticket')).connection;
+      }
+
+    getCurrentTicketId() {
+              return JSON.parse(localStorage.getItem('ticket')).id;
+            }
+    removeTicket(){
+     localStorage.removeItem("ticket");
+    }
+
+    createItemSite(){
+    localStorage.setItem("site", JSON.stringify({"site":null}));
+    }
+    getItemSite(){
+    return JSON.parse(localStorage.getItem('site')).site;
+    }
+
 
 
 }

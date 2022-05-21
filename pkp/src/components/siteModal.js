@@ -23,6 +23,8 @@ class SiteModal extends Component {
         this.setState({
                 number: numberSite
               });
+
+               localStorage.setItem("site", JSON.stringify({"site":numberSite}));
   }
 
 
@@ -99,8 +101,10 @@ class SiteModal extends Component {
                      <label id="label11" style={{color: '#fff'}}>
                        Wybrano Siedzenie Numer:
                         <input type="text" disabled value={this.state.number}   style={{color: '#fff'}}/>
+
                      </label>
-                     <button type="button">Choose</button>
+                      <input type="submit" id="btnOK1" value='choose' onClick={this.props.handler} />
+
                    </form>
 
             </div>

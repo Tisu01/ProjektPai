@@ -171,7 +171,7 @@ class App extends Component {
             <Route exact path={"/home"} element={<Home />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/ticketForm" element={<TicketForm/>} />
-            <Route exact path="/connections/:date/:from/:to"  element={<Connections />}  />
+            <Route exact path="/connections"  element={<Connections />}  />
             <Route exact path="/changeData" element={<ChangeData />} />
             <Route exact path="/payment" element={<Payment />} />
             <Route exact path="/information" element={<Information />} />
