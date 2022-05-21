@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const Ticket_API_BASE_URL = "http://localhost:8080/api/ticket";
 
+
 class TicketService {
 
     getTicket(){
@@ -27,7 +28,9 @@ class TicketService {
         return axios.put(Ticket_API_BASE_URL + '/first/' +  ticketId, ticket);
     }
 
-    updateTicketSecond(ticket, ticketId){
+    updateTicketSecond(ticketId, ticket){
+//    const header = new Headers();
+//    header.append('Access-Control-Allow-Origin', '*');
         return axios.put(Ticket_API_BASE_URL + '/second/' +  ticketId, ticket);
     }
 

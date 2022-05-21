@@ -135,7 +135,7 @@ disabled = { this.state.loading } >
     this.state.message && (
         <div className="form-group" >
             <div className="alert alert-danger" role = "alert" >
-                { this.state.message }
+                Account doesn`t exist
                 < /div>
                 < /div>
                              )

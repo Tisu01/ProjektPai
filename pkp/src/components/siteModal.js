@@ -103,7 +103,7 @@ class SiteModal extends Component {
                         <input type="text" disabled value={this.state.number}   style={{color: '#fff'}}/>
 
                      </label>
-                      <input type="submit" id="btnOK1" value='choose' onClick={this.props.handler} />
+                      <input type="submit" id="btnOK1" value='choose'  />
 
                    </form>
 

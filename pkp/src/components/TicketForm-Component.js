@@ -26,8 +26,8 @@ class TicketForm extends Component {
     super();
      this.state = {
     show: false,
-    site: 2,
     showSite: false,
+    reduction: null,
     listConnection: [],
     stationStarting: '',
     timeStarting: '',
@@ -37,12 +37,30 @@ class TicketForm extends Component {
     dataFinal: '',
     prize: null,
     train: '',
+    name: '',
+    surname: '',
+    dates: '',
      };
-
+     this.reductionHandler  = this.reductionHandler.bind(this);
+     this.nameHandler  = this.nameHandler.bind(this);
+     this.surnameHandler  = this.surnameHandler.bind(this);
      this.showModal = this.showModal.bind(this);
      this.hideModal = this.hideModal.bind(this);
 
   }
+  reductionHandler = (event) => {
+    var prize = this.state.prize*event.target.value;
+     prize = prize.toFixed(2);
+     this.setState({prize: prize});
+     this.setState({reduction: event.target.value});
+   }
+  nameHandler = (event) => {
+    var todayDate = new Date().toISOString().slice(0, 10);
+    this.setState({name: event.target.value, dates: todayDate});
+   }
+ surnameHandler = (event) => {
+   this.setState({surname: event.target.value});
+   }
 
   showSite = () => {
   this.setState({ showSite: true });
@@ -56,15 +74,26 @@ class TicketForm extends Component {
     this.setState({ show: false });
 
   };
+  updateTicket = () => {
+              let ticket = {
+               reduction: this.state.reduction,
+               userSurname: this.state.surname,
+               userName: this.state.name,
+               dates: this.state.dates,
+               site: TicketService.getItemSite(),
+               prize: this.state.prize
+               };
+              console.log('ticket => ' + JSON.stringify(ticket));
+              TicketService.updateTicketSecond(TicketService.getCurrentTicketId(), ticket).then( res => {
+               this.props.navigate('/login');
+                });
+  }
 
 
 
  componentDidMount() {
    const ticketsDataConn = JSON.stringify(TicketService.getCurrentTicketConn());
-
-
     ConnectionService.getConnectionById(ticketsDataConn).then(
-
             response => {
             let connection = response.data;
               this.setState({
@@ -107,6 +136,7 @@ const { showSite } = this.state;
 <div>
 
  <div className="row" id="rowMain">
+
       <div className="col-xs-6" id="innerBox" style={{margin: '2%'}}>
 
       <div className="City"  style={{color: '#00a34f', margin: '0 auto' , fontSize: '24px'}}> {this.state.stationStarting}</div>
@@ -133,19 +163,24 @@ const { showSite } = this.state;
       onValuesChange='50'
       size='50'>
       <Form.Item label="NAME" >
-        <Input type='text' />
+        <Input type='text'  value={this.state.name} onChange={this.nameHandler}/>
       </Form.Item>
-      <Form.Item label="SURNAME" >
+      <Form.Item label="SURNAME" value={this.state.surname} onChange={this.surnameHandler}>
         <Input type='text' />
 
        </Form.Item>
 
-        <Form.Item label="ULGA"  >
-        <select className="custom-select" id="inputGroupSelect01">
-            <option value="0">0% biedaku</option>
-            <option value="1">50% studencie</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+        <Form.Item label="REDUCTION"  >
+        <select className="custom-select" id="inputGroupSelect01" defaultValue={this.state.reduction} onChange={this.reductionHandler}>
+            <option value='1' >brak</option>
+            <option value={0}>100% Dla dziecka do 4 lat</option>
+            <option value={0.7}>30% Bilet dla seniora</option>
+            <option value={0.67}>33% Honorowy dawca krwi</option>
+            <option value={0.63}>37% Dzieci/młodzież</option>
+            <option value={0.63}>37% inwalidzi</option>
+            <option value={0.63}>37% weterani</option>
+            <option value={0.49}>51% studenci i doktoranci</option>
+             <option value={0.78}>78% ofiary wojny</option>
           </select>
        </Form.Item>
         <Form.Item label="SITE" >
@@ -158,13 +193,13 @@ const { showSite } = this.state;
          </Form.Item>
       <Form.Item>
       <br />
-        <Button type="primary" size="large" id="searchbtn"   onClick={ () => this.viewConnection()} >
+        <Button type="primary" size="large" id="searchbtn"   onClick={ () => this.updateTicket()} >
               Buy Ticket
             </Button>
       </Form.Item>
      <Form.Item>
         <h2>Site: {TicketService.getItemSite()} </h2>
-        <h2>Prize: {this.state.prize} </h2>
+        <h2>Prize: {this.state.prize} PLN</h2>
       </Form.Item>
 
     </Form>
