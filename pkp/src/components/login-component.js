@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
 import AuthService from "../services/auth-service";
 import "../styles/styles.css";
+import TicketService from "../services/ticketService";
 
 const { Content } = Layout;
 const required = value => {
@@ -59,8 +60,15 @@ class Login extends Component {
             if (this.state.clickButton === true) {
                 AuthService.login(this.state.username, this.state.password).then(
                     () => {
+                        const ticketCurrent = TicketService.getCurrentTicket();
+                        if(ticketCurrent){
+                        this.props.navigate('/payment');
+                        window.location.reload('/');
+                        }else{
                         this.props.navigate('/home');
                         window.location.reload('/');
+                        }
+
                     },
                     error => {
                         const resMessage =
@@ -145,7 +153,7 @@ disabled = { this.state.loading } >
     <p>
     <a href="http://localhost:8080/home" class="linkGoogle" >
         <button className="btn btn-primary btn-block" >
-            Login with Google
+            Login in with Google
             < /button>
             < /a>
             < /p>

@@ -37,13 +37,24 @@ class TicketService {
     updateTicketThird(ticket, ticketId){
         return axios.put(Ticket_API_BASE_URL + '/third/' +  ticketId, ticket);
     }
+
+
+    //local
     getCurrentTicketConn() {
         return JSON.parse(localStorage.getItem('ticket')).connection;
       }
+    getCurrentTicket() {
+                  return JSON.parse(localStorage.getItem('ticket'));
+     }
 
     getCurrentTicketId() {
               return JSON.parse(localStorage.getItem('ticket')).id;
-            }
+    }
+    getCurrentTicketPrize() {
+                  return JSON.parse(localStorage.getItem('ticket')).prize;
+    }
+
+
     removeTicket(){
      localStorage.removeItem("ticket");
     }

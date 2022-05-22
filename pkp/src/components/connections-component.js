@@ -76,7 +76,6 @@ class Connections extends Component {
   render() {
 
       const { currentConn, doModal } = this.state;
-      console.log(currentConn.date);
   return (
   <div>
   {doModal && (<div ><h2>ABY KUPIC BILET MUSISZ SIE ZALOGOWAC</h2>

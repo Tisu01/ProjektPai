@@ -25,6 +25,7 @@ class TicketForm extends Component {
   constructor(props) {
     super();
      this.state = {
+    currentUser: '',
     show: false,
     showSite: false,
     reduction: null,
@@ -85,7 +86,15 @@ class TicketForm extends Component {
                };
               console.log('ticket => ' + JSON.stringify(ticket));
               TicketService.updateTicketSecond(TicketService.getCurrentTicketId(), ticket).then( res => {
+              localStorage.setItem("ticket", JSON.stringify(ticket));
+              if(this.state.currentUser){
+               console.log("jest user");
+                this.props.navigate('/payment');
+              }else{
+              console.log("nie mausera");
                this.props.navigate('/login');
+              }
+
                 });
   }
 
@@ -93,6 +102,8 @@ class TicketForm extends Component {
 
  componentDidMount() {
    const ticketsDataConn = JSON.stringify(TicketService.getCurrentTicketConn());
+   const currentUser = AuthService.getCurrentUser();
+   this.setState({ currentUser: currentUser});
     ConnectionService.getConnectionById(ticketsDataConn).then(
             response => {
             let connection = response.data;
