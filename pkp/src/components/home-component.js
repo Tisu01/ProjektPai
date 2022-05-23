@@ -6,6 +6,8 @@ import {
     Form,
     Input,
     Button,
+    Select,
+    Option,
 } from 'antd';
 //import UserService from "../services/user-service";
 import img1 from '../images/img1.jpg'
@@ -20,11 +22,17 @@ export const withNavigation = (Component: Component) => {
 class Home extends Component {
     constructor(props) {
         super(props);
+        var curr = new Date();
+        curr.setDate(curr.getDate());
+        var dateN = curr.toISOString().substr(0,10);
+
         this.handleFrom = this.handleFrom.bind(this);
         this.handleTo = this.handleTo.bind(this);
         this.handleDate = this.handleDate.bind(this);
 
+
         this.state = {
+            dateNow:  dateN,
             from: "",
             to: "",
             date: "",
@@ -70,13 +78,13 @@ onValuesChange = '50'
 size = '50'
 >
     <Form.Item label="FROM" value = { this.state.from } onChange = { this.handleFrom } >
-        <Input type='text' />
+        <Input type='text' defaultValue="Kielce"/>
             </Form.Item>
-            < Form.Item label = "TO:" value = { this.state.to } onChange = { this.handleTo } >
-                <Input type='text' />
+            <Form.Item label = "TO:" value = { this.state.to } onChange = { this.handleTo } >
+                <Input type='text' defaultValue="Radom"/>
                     </Form.Item>
                     < Form.Item label = "DATE:" value = { this.state.date } onChange = { this.handleDate } >
-                        <Input type='date' />
+                        <Input type='date' defaultValue={this.state.dateNow}/>
                             </Form.Item>
                             < br />
                             <Form.Item>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import UserService from "../services/user-service";
 import EventBus from "../common/EventBus";
-
+import TicketService from "../services/ticketService";
 export default class BoardUser extends Component {
   constructor(props) {
     super(props);
@@ -13,6 +13,7 @@ export default class BoardUser extends Component {
   }
 
   componentDidMount() {
+   TicketService.removeTicket();
     UserService.getUserBoard().then(
       response => {
         this.setState({
@@ -41,6 +42,7 @@ export default class BoardUser extends Component {
       <div className="container">
         <header className="jumbotron">
           <h3>{this.state.content}</h3>
+          <h3>Bileciki</h3>
         </header>
       </div>
     );

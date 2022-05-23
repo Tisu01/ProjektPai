@@ -77,6 +77,7 @@ class TicketForm extends Component {
   };
   updateTicket = () => {
               let ticket = {
+               id: TicketService.getCurrentTicketId(),
                reduction: this.state.reduction,
                userSurname: this.state.surname,
                userName: this.state.name,
@@ -88,10 +89,8 @@ class TicketForm extends Component {
               TicketService.updateTicketSecond(TicketService.getCurrentTicketId(), ticket).then( res => {
               localStorage.setItem("ticket", JSON.stringify(ticket));
               if(this.state.currentUser){
-               console.log("jest user");
                 this.props.navigate('/payment');
               }else{
-              console.log("nie mausera");
                this.props.navigate('/login');
               }
 
@@ -143,7 +142,7 @@ const { showSite } = this.state;
 
 
 <div id="wrapper2">
-<h2>Tutaj informacje o polaczeniu</h2>
+<h2>Information about Ticket</h2>
 <div>
 
  <div className="row" id="rowMain">
@@ -159,7 +158,6 @@ const { showSite } = this.state;
          <h2> ----> </h2>
          </div>
       <div className="col-xs-6" id="innerBox" style={{margin: '2%'}}>
-
             <div className="City" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}> {this.state.stationFinal}</div>
             <div className="Time" style={{color: '#00a34f', margin: '0 auto', fontSize: '24px'}}>{this.state.timeFinal}</div>
             <div className="Date" style={{color: '#00a34f', margin: '0 auto'}}>{this.state.dataFinal}</div>
@@ -169,7 +167,7 @@ const { showSite } = this.state;
 </div>
 
 
-<Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} layout="horizontal"
+<Form id="formRadius" labelCol={{span: 4,}} wrapperCol={{span: 14,}} style={{marginLeft: '10%'}} layout="horizontal"
       initialValues={{size: '20'}}
       onValuesChange='50'
       size='50'>
@@ -191,7 +189,7 @@ const { showSite } = this.state;
             <option value={0.63}>37% inwalidzi</option>
             <option value={0.63}>37% weterani</option>
             <option value={0.49}>51% studenci i doktoranci</option>
-             <option value={0.78}>78% ofiary wojny</option>
+             <option value={0.22}>78% ofiary wojny</option>
           </select>
        </Form.Item>
         <Form.Item label="SITE" >
@@ -212,13 +210,9 @@ const { showSite } = this.state;
         <h2>Site: {TicketService.getItemSite()} </h2>
         <h2>Prize: {this.state.prize} PLN</h2>
       </Form.Item>
-
     </Form>
-
 </div>
 </div>
-
-
 </div>
     );
   }

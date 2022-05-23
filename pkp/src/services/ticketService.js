@@ -34,7 +34,7 @@ class TicketService {
         return axios.put(Ticket_API_BASE_URL + '/second/' +  ticketId, ticket);
     }
 
-    updateTicketThird(ticket, ticketId){
+    updateTicketThird(ticketId, ticket){
         return axios.put(Ticket_API_BASE_URL + '/third/' +  ticketId, ticket);
     }
 
@@ -51,12 +51,15 @@ class TicketService {
               return JSON.parse(localStorage.getItem('ticket')).id;
     }
     getCurrentTicketPrize() {
-                  return JSON.parse(localStorage.getItem('ticket')).prize;
+                return JSON.parse(localStorage.getItem('ticket')).prize;
     }
 
 
     removeTicket(){
      localStorage.removeItem("ticket");
+     localStorage.removeItem("site");
+     localStorage.removeItem("conn");
+     localStorage.removeItem("payment");
     }
 
     createItemSite(){
