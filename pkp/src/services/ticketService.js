@@ -9,6 +9,10 @@ class TicketService {
         return axios.get(Ticket_API_BASE_URL+ '/all');
     }
 
+     getTicketAccount(id){
+            return axios.get(Ticket_API_BASE_URL+ '/all/'+ id);
+        }
+
     getTicketOne(){
         return axios.get(Ticket_API_BASE_URL + '/one');
     }

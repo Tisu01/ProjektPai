@@ -19,6 +19,7 @@ class BoardAdmin extends Component {
             timeFinal: '',
             dataFinal: '',
             prize: '',
+            train: '',
 
         }
         this.idHandler = this.idHandler.bind(this);
@@ -29,6 +30,7 @@ class BoardAdmin extends Component {
         this.timeFinalHandler = this.timeFinalHandler.bind(this);
         this.dataFinalHandler = this.dataFinalHandler.bind(this);
         this.prizeHandler = this.prizeHandler.bind(this);
+        this.trainHandler = this.trainHandler.bind(this);
 
         this.updateConnection = this.updateConnection.bind(this);
     }
@@ -52,7 +54,9 @@ class BoardAdmin extends Component {
         stationFinal: this.state.stationFinal,
         timeFinal: this.state.timeFinal,
         dataFinal: this.state.dataFinal,
-        prize: this.state.prize};
+        prize: this.state.prize,
+        train: this.state.train,
+        };
         console.log('connection => ' + JSON.stringify(connection));
         console.log('id => ' + JSON.stringify(this.state.id));
         ConnectionService.createConnection(connection, this.state.id)
@@ -88,7 +92,9 @@ class BoardAdmin extends Component {
      prizeHandler= (event) => {
                        this.setState({prize: event.target.value});
           }
-
+    trainHandler= (event) => {
+                       this.setState({train: event.target.value});
+          }
 
 //    cancel(){
 //        this.props.history.push('/employees');
@@ -140,6 +146,11 @@ class BoardAdmin extends Component {
                                                 <label> Prize: </label>
                                                  <input placeholder="Prize" name="prize" className="form-control"
                                                  value={this.state.prize} onChange={this.prizeHandler}/>
+                                          </div>
+                                          <div className = "form-group">
+                                               <label> Train Number: </label>
+                                               <input placeholder="train" name="train" className="form-control"
+                                               value={this.state.train} onChange={this.trainHandler}/>
                                           </div>
 
                                         <button className="btn btn-success" onClick={this.updateConnection}>Save</button>
