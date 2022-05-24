@@ -8,6 +8,8 @@ class PaymentService {
              return axios.get(Payment_API_BASE_URL+ '/all');
          }
 
+
+
     createPayment(payment){
         return axios.post(Payment_API_BASE_URL + '/add', payment).then(response => {
              localStorage.setItem("payment", JSON.stringify(response.data));

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import '../styles/Home.css';
 import { useNavigate } from "react-router";
 import { RouteComponentProps, withRouter } from 'react-router-class-tools';
+import TicketService from "../services/ticketService";
 import {
     Form,
     Input,
@@ -33,9 +34,9 @@ class Home extends Component {
 
         this.state = {
             dateNow:  dateN,
-            from: "",
-            to: "",
-            date: "",
+            from: "Kielce",
+            to: "Radom",
+            date: dateN,
             message: ""
         };
     }
@@ -61,6 +62,7 @@ class Home extends Component {
         date: this.state.date
         };
         localStorage.setItem("conn", JSON.stringify(conn));
+
         this.props.navigate('/connections');
         //this.props.navigate(`/connections/${this.state.date}/${this.state.from}/${this.state.to}`);
     }
@@ -68,7 +70,7 @@ class Home extends Component {
 
     const onClick = () => this.props.navigate('/information');
         return (
-            <div className= "BoxHome" >
+            <div className= "BoxHome" style={{marginBottom: '10%'}}>
             <div id="mainBox" >
                 <div className="row" >
                     <Form id="formRadius" labelCol = {{ span: 4,}

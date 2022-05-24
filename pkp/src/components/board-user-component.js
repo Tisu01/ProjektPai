@@ -24,12 +24,13 @@ export default class BoardUser extends Component {
   }
 
 
-  getTicketPDF(id){
-    console.log('pobieram');
+  getTicketPDF  = (id, idT, idP) => {
+    TicketService.getTicketPDF(id, idT, idP);
   }
 
 
   componentDidMount() {
+
   const userId = AuthService.getCurrentUserId();
    TicketService.removeTicket();
 
@@ -187,7 +188,7 @@ export default class BoardUser extends Component {
                                               )}
 
                                                     <td>
-                                                        <button onClick={ () => this.getTicketPDF(ticket.id)} className="btn btn-info">Download Ticket </button>
+                                                        <button onClick={() => this.getTicketPDF(ticket.connection, ticket.id, ticket.payments)} className="btn btn-primary">Download Ticket </button>
 
                                                     </td>
                                                </tr>
