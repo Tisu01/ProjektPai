@@ -27,7 +27,7 @@ class SiteModal extends Component {
         this.setState({
                 number: numberSite
               });
-SiteService.updateSite(TicketService.getItemSite());
+              SiteService.updateSite(TicketService.getItemSite());
                localStorage.setItem("site", JSON.stringify({"site":numberSite}));
 
   }
@@ -71,10 +71,8 @@ SiteService.getSiteAllByConn(conn).then(
        {
                sites.map(
                sit =>
-
            <div id="boxA" key = {sit.id}><div className="a" > <h2>{sit.id}</h2> </div> {sit.status && ( <Button type="primary" size="large" id="btnK2"  onClick={ () => this.takeNumber(sit.id)}><CheckOutlined /></Button>)}</div>
                   )}
-
          </div>
 
                 <form id="form111">
