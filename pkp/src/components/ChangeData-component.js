@@ -23,9 +23,39 @@ class ChangeData extends Component {
     this.state = {
          Navigate: null,
          userReady: false,
-         currentUser: { username: "" }
+         currentUser: { username: "" },
+         password: '',
+         passwordRep: ''
     };
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangePasswordRep = this.onChangePasswordRep.bind(this);
+
   }
+   onChangePassword(e) {
+            this.setState({
+                password: e.target.value
+            });
+        }
+      onChangePasswordRep(e) {
+            this.setState({
+                passwordRep: e.target.value
+            });
+        }
+
+   changePassword = () => {
+        if(this.state.password === this.state.passwordRep){
+        let user ={
+                password: this.state.password
+                };
+                const id =  AuthService.getCurrentUserId();
+                AuthService.updatePassword(id, user);
+        }else{
+        alert("Password is not same");
+        }
+
+
+
+   }
 
   componentDidMount() {
         const currentUser = AuthService.getCurrentUser();
@@ -54,14 +84,16 @@ class ChangeData extends Component {
                                <Input type='text' />
                               </Form.Item>
                                <Form.Item label="NEW PASSWORD" >
-                                <Input type='text' />
+                                <Input type='text' value = { this.state.password }
+                                                   onChange = { this.onChangePassword }/>
                                 </Form.Item>
                                 <Form.Item label="REPEAT NEW PASSWORD" >
-                                <Input type='text' />
+                                <Input type='text' value = { this.state.passwordRep }
+                                                   onChange = { this.onChangePasswordRep }/>
                                 </Form.Item>
                              <Form.Item>
                              <br />
-                               <Button type="primary" size="large" id="searchbtn"   onClick={ () => this.viewConnection()} >
+                               <Button type="primary" size="large" id="searchbtn"   onClick={ () => this.changePassword()} >
                                      Change Password
                                    </Button>
                              </Form.Item>

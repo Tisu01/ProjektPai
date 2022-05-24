@@ -86,16 +86,8 @@ class App extends Component {
                 Home
               </Link>
             </li>
-             <li className="nav-item">
-              <Link to={"/ticketForm"} className="nav-link">
-                  buy ticket
-                 </Link>
-               </li>
-                    <li className="nav-item">
-                                     <Link to={"/payment"} className="nav-link">
-                                          Payment
-                                          </Link>
-                                    </li>
+
+
                  <li className="nav-item">
                                      <Link to={"/information"} className="nav-link">
                                          Information

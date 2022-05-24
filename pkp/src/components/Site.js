@@ -1,6 +1,8 @@
 import React, { Component, Modal, Button, useState, render} from "react";
 import '../styles/styles.css';
 import SiteModal from "./siteModal"
+import TicketService from "../services/ticketService";
+import SiteService from "../services/sitesService";
 
 const Site = ({ handleClose, show, children }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";

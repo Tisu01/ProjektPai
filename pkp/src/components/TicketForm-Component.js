@@ -8,6 +8,7 @@ import SiteModal from "./siteModal"
 import TicketService from "../services/ticketService";
 import ConnectionService from "../services/ConnectionsService";
 import AuthService from "../services/auth-service";
+import SiteService from "../services/sitesService";
 import {
   Layout,
   Form,
@@ -72,7 +73,9 @@ class TicketForm extends Component {
   };
 
   hideModal = () => {
+
     this.setState({ show: false });
+
 
   };
   updateTicket = () => {
@@ -85,6 +88,7 @@ class TicketForm extends Component {
                site: TicketService.getItemSite(),
                prize: this.state.prize
                };
+
               console.log('ticket => ' + JSON.stringify(ticket));
               TicketService.updateTicketSecond(TicketService.getCurrentTicketId(), ticket).then( res => {
               localStorage.setItem("ticket", JSON.stringify(ticket));
@@ -100,8 +104,10 @@ class TicketForm extends Component {
 
 
  componentDidMount() {
-   const ticketsDataConn = JSON.stringify(TicketService.getCurrentTicketConn());
+
    const currentUser = AuthService.getCurrentUser();
+   const ticketsDataConn = JSON.stringify(TicketService.getCurrentTicketConn());
+
    this.setState({ currentUser: currentUser});
     ConnectionService.getConnectionById(ticketsDataConn).then(
             response => {

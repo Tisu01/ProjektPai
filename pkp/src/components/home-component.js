@@ -64,7 +64,7 @@ class Home extends Component {
         localStorage.setItem("conn", JSON.stringify(conn));
 
         this.props.navigate('/connections');
-        //this.props.navigate(`/connections/${this.state.date}/${this.state.from}/${this.state.to}`);
+
     }
     render() {
 

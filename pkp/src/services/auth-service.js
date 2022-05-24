@@ -34,6 +34,10 @@ class AuthService {
     });
   }
 
+  updatePassword(id, user){
+            return axios.put(API_URL + 'update/' +  id, user);
+  }
+
   getCurrentUser() {
     return JSON.parse(localStorage.getItem('user'));
   }
